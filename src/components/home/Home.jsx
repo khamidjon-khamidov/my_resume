@@ -3,6 +3,7 @@ import Name from "./Name"
 import DownloadBtn from "../buttons/DownloadBtn";
 import GooglePlayBtn from "../buttons/GooglePlayBtn";
 import Social from "./Social";
+import MyPicture from "./right/MyPicture";
 
 function Home() {
 
@@ -18,8 +19,8 @@ function Home() {
                 </div>
 
                 <div className="home-left-description">
-                    <p>I am an enthusiastic Android and Junior Web developer who is keen on</p>
-                    <p>learning and working with friendly team.</p>
+                    <p>I am an enthusiastic Android and Junior Web Developer who is keen on</p>
+                    <p>learning and working with a friendly team.</p>
                 </div>
 
                 <div className="home-left-buttons">
@@ -30,7 +31,7 @@ function Home() {
             </div>
 
             <div className="home-right">
-
+                <MyPicture />
             </div>
 
         </div>

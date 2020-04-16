@@ -50,10 +50,6 @@ function Header() {
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#cta">Posts</a>
-                        </li>
-
-                        <li className="nav-item">
                             <a className="nav-link" href="#cta">Login</a>
                         </li>
 
