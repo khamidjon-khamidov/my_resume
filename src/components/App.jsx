@@ -1,44 +1,17 @@
 import React from "react";
 import Header from "./main/Header";
+import About from "./about/About";
 import Footer from "./main/Footer";
+import Home from "./home/Home"
 
 
-function App(){
+function App() {
 
     return (
         <div>
             <Header />
-            <div style={{ width:'100%', height: '90px'}}>
-                <h1>Hello I am khamidjon</h1>
-            </div>
-            
-            <div style={{ width:'100%', height: '90px'}}>
-                <h1>Hello I am khamidjon</h1>
-            </div>
-
-            <div style={{ width:'100%', height: '90px'}}>
-                <h1>Hello I am khamidjon</h1>
-            </div>
-
-            <div style={{ width:'100%', height: '90px'}}>
-                <h1>Hello I am khamidjon</h1>
-            </div>
-            <div style={{ width:'100%', height: '90px'}}>
-                <h1>Hello I am khamidjon</h1>
-            </div>
-            <div style={{ width:'100%', height: '90px'}}>
-                <h1>Hello I am khamidjon</h1>
-            </div>
-
-            <div style={{ width:'100%', height: '90px'}}>
-                <h1>Hello I am khamidjon</h1>
-            </div>
-
-            <div style={{ width:'100%', height: '90px'}}>
-                <h1>Hello I am khamidjon</h1>
-            </div>
-
-
+            <Home />
+            <About />
             <Footer />
         </div>
     );
