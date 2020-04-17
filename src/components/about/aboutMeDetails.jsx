@@ -14,7 +14,7 @@ const aboutMeDetails = {
             link: "https://www.lsbu.ac.uk/"
         }
     ],
-    pictureLink: "https://firebasestorage.googleapis.com/v0/b/who-is-khamidjon.appspot.com/o/profile_img_compressed.jpg?alt=media&token=9f22421d-fa58-49ee-ae10-d8f72d939d99"
+    pictureLink: "./img/ha1.png"
 }
 
 export default aboutMeDetails;

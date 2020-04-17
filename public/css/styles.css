@@ -129,8 +129,8 @@ header {
 .home-my-picture {
     margin: auto;
     vertical-align: top;
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
 }
 
 /* ------------------------------ Additional Info ----------------------------------- */
@@ -148,7 +148,9 @@ header {
     background: white;
     width: 60%;
     border-radius: 70px;
-    box-shadow: 1px 3px grey;
+    -webkit-box-shadow: 0px 0px 21px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 21px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 21px -5px rgba(0, 0, 0, 0.75);
     display: inline-block;
     padding: 2% 0;
     margin: 0 auto;
@@ -177,7 +179,7 @@ header {
     width: 55px;
 }
 
-.addtional-item-info{
+.addtional-item-info {
     text-align: left;
     display: inline-block;
     /* width: 73%; */
@@ -185,14 +187,14 @@ header {
     line-height: 0.1rem;
 }
 
-.addtional-item-info .additional-item1{
+.addtional-item-info .additional-item1 {
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
     font-size: 1.1rem;
     display: inline-block;
 }
 
-.addtional-item-info .additional-item2{
+.addtional-item-info .additional-item2 {
     color: #fac100;
     font-family: 'Hi Melody', cursive;
     font-size: 1rem;
@@ -203,100 +205,154 @@ header {
 
 .about-container {
     position: relative;
-    width: 95%;
-    /* margin: 10px auto; */
-    box-shadow: 5px 5px grey;
-    border-radius: 7px;
-    border-color: black;
-    /* #28A8FF; */
-    border-style: solid;
-    padding-top: 0;
-    background-image: url("../img/blue_backgr.jpg") !important;
+    width: 100%;
+    /* height: 500px; */
+    margin-bottom: 50px;
+    /* background-image: url("../img/about_backgr.png"); */
 }
 
-/* ---------- left side of about me ------------------------  */
+/* ---------- backgr image part(left) -------- */
 
-.about-frst-part-container {
+.about-backgr-image-container {
+    width: 15%;
     display: inline-block;
+    padding-right: 5%;
+}
+
+.about-backgr-image {
+    opacity: 0.07;
+    width: 100%;
+    height: 100%;
+}
+
+/* ----------- about my image part(middle) -------- */
+
+.about-my-img-container {
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    /* height: 100%; */
+    padding: 5% 0;
+    margin: auto;
+    /* padding: 0 !important; */
+}
+
+.about-my-img {
+    display: inline-block;
+    opacity: 0.9;
+    padding-right: 5%;
+    width: 100%;
+    height: 100%;
+    border-style: none none solid solid;
+    border-color: #fac100;
+    /* background-image: linear-gradient(white, #f5f5f5, #ebecf0); */
+    margin: auto;
+}
+
+/* --- to give image border colors */
+
+.top-left {
+    /* background: yellow; */
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    border-style: solid none none solid;
+    border-color: #fac100 transparent transparent #fac100;
+    width: 80px;
+    height: 80px;
+}
+
+.bottom-right {
+    /* background: yellow; */
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    border-style: none solid solid none;
+    border-color: transparent #fac100 #fac100 transparent;
+    width: 80px;
+    height: 80px;
+}
+
+/* ------------- about details part (right) ----------- */
+
+.about-details-container {
+    display: inline-block;
+    vertical-align: top;
     width: 50%;
     height: 100%;
-    padding-left: 3%;
-    padding-top: 1%;
-    vertical-align: top;
+    padding-left: 5%;
 }
 
-.about-frst-part-container h1 {
-    font-family: 'Comic Neue', cursive;
-    color: white;
-    /* #00a8ff; */
+.about-details-container .my-intro {
+    color: #fac100;
+}
+
+.about-details-container .about-me {
+    color: #a600ff;
+    font-family: 'Hi Melody', cursive;
+    line-height: 0.5;
     font-size: 3rem;
 }
 
-.about-frst-part-container h3:hover {
-    /* color: #4e4b4a; */
-    color: white;
+.about-details-container .about-description {
+    line-height: 1.2;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
 }
 
-.about-me-detail {
-    padding: 3% 0;
-    line-height: 2rem;
+.about-details-container .my-interests {
+    font-family: 'Hi Melody', cursive;
+    color: #a600ff;
+    font-size: 1.5rem;
 }
 
-.about-me-detail a {
-    color: black;
-    text-decoration: underline;
+.about-details-container .about-me-info {
+    line-height: 0.3rem;
 }
 
-.about-me-detail .about-info-detail-link:hover {
-    color: #343A3F !important;
+.about-details-container .about-me-info p {
+    line-height: 1;
+    vertical-align: bottom;
 }
 
-.about-me-detail a:hover {
-    color: white;
+.about-details-container .about-me-info i {
+    color: #fac100;
 }
 
-.about-me-detail h4 {
-    display: inline;
-    font-size: 1rem;
+.about-details-container .about-me-info strong {
+    color: #a600ff;
+    font-family: 'Hi Melody', cursive;
+    font-size: 1.3rem;
 }
 
-.about-me-detail .about-info {
-    white-space: pre-wrap;
-    font-size: 1rem;
+.about-details-container .about-me-info span:hover {
+    color: #fac100;
+}
+/* ------------ interests part--------- */
+.about-details-container .my-interests {
+    line-height: 0;
+    padding-top: 5%;
 }
 
-.about-me-detail .about-info-detail {
-    display: inline;
-    /* position: absolute; */
-    /* background: yellow; */
-}
-
-.about-me-detail .about-info-detail:hover {
-    /* color: #28A8FF; */
-    color: white;
-}
-
-.about-frst-part-container h3 {
-    font-size: 1rem;
-    display: inline-block;
-    color: #a9a9a9
-}
-
-/* ------------------------- right side of about me ----------------------- */
-
-.about-scond-part-container {
-    text-align: center;
-    display: inline-block;
-    width: 50%;
-    height: 800px;
-    vertical-align: top;
-}
-
-.about-me-picture {
-    margin: auto;
-    vertical-align: top;
+.about-interests-container{
     width: 100%;
-    height: 100%;
+    margin-top: 0;
+}
+
+.about-interests-container p{
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 0;
+}
+
+.about-interests-container i{
+    color: #fac100;
+}
+
+.about-interests-container span{
+    color: #a600ff;
+    font-family: 'Hi Melody', cursive;
+    font-size: 1.3rem;
 }
 
 /* --------------------------- Footer ----------------------- */
