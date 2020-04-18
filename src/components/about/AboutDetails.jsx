@@ -57,22 +57,22 @@ function AboutDetails() {
 
             {/* about me details */}
             <div className="about-me-info">
-                <p className="my-name"><i class="fas fa-user"></i> <strong>Name:</strong> <span>Khamidjon Khamidov</span></p>
+                <p className="my-name"><i className="fas fa-user"></i> <strong>Name:</strong> <span>Khamidjon Khamidov</span></p>
 
-                <p className="my-phone"><i class="fas fa-phone"></i> <strong>Phone:</strong> <span
+                <p className="my-phone"><i className="fas fa-phone"></i> <strong>Phone:</strong> <span
                     onClick={() => copyToClipboard(aboutMeDetails.phone)}
                     style={{ cursor: "pointer" }}>{aboutMeDetails.phone}</span></p>
 
-                <p className="my-email"><i class="fas fa-envelope"></i> <strong>Email:</strong> <span
+                <p className="my-email"><i className="fas fa-envelope"></i> <strong>Email:</strong> <span
                     onClick={() => copyToClipboard(aboutMeDetails.phone)}
                     style={{ cursor: "pointer" }}
                 >{aboutMeDetails.email}</span></p>
 
-                <p className="my-address"><i class="fas fa-address-card"></i> <strong>Address:</strong> <span>{aboutMeDetails.address}</span></p>
+                <p className="my-address"><i className="fas fa-address-card"></i> <strong>Address:</strong> <span>{aboutMeDetails.address}</span></p>
 
-                <p className="my-address"><i class="fas fa-graduation-cap"></i> <strong>Education:</strong> <a href={aboutMeDetails.education[0].link}>{aboutMeDetails.education[0].name}</a> <span>and</span> <a href={aboutMeDetails.education[1].link}>{aboutMeDetails.education[1].name}</a></p>
+                <p className="my-address"><i className="fas fa-graduation-cap"></i> <strong>Education:</strong> <a href={aboutMeDetails.education[0].link}>{aboutMeDetails.education[0].name}</a> <span>and</span> <a href={aboutMeDetails.education[1].link}>{aboutMeDetails.education[1].name}</a></p>
 
-                <p className="my-experience"><i class="fas fa-briefcase"></i> <strong>Experience:</strong> <span>{experiencePeriod}</span></p>
+                <p className="my-experience"><i className="fas fa-briefcase"></i> <strong>Experience:</strong> <span>{experiencePeriod}</span></p>
             </div>
 
             {/* my interests */}

@@ -11,7 +11,7 @@ function About() {
         <div className="about-container">
            <AboutBackgrImg />
            <AboutMyImg />
-           <AboutDetails />
+           <AboutDetails /> 
         </div>
     );
 }

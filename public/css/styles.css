@@ -1,4 +1,4 @@
-* {
+/* * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -355,6 +355,33 @@ header {
     font-size: 1.3rem;
 }
 
+/* ----------------------------- Skills part ---------------------------------- */
+.skills-container{
+    background: #f4f4f4;
+    padding: 3% 0;
+    width: 95%;
+    margin: auto;   
+}
+.skills-container .skills-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    vertical-align: top;
+}
+.skills-container  p{
+    text-align: center;
+    color: #a600ff;
+    font-family: 'Hi Melody', cursive;
+    font-size: 3rem;   
+}
+
+.skills-container .read-more-button{
+    text-align: center;
+    padding: 10% 0 1% 0;
+    background: linear-gradient(0deg, rgba(199,161,219,1) 0%, rgba(228,201,242,1) 15%, rgba(244,244,244,1) 100%);
+}
+
+
 /* --------------------------- Footer ----------------------- */
 
 footer {
@@ -370,4 +397,4 @@ footer {
 footer p {
     padding: 0;
     margin: 0;
-}
+} 
