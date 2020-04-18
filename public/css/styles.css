@@ -1,4 +1,4 @@
-/* * {
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -288,10 +288,15 @@ header {
 }
 
 .about-details-container .about-me {
+    display: inline-block;
+    border-style: solid;
+    text-align: center;
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
+    font-size: 3rem; 
     line-height: 0.5;
-    font-size: 3rem;
+    padding: 2%;
+    border-color: #fac100;
 }
 
 .about-details-container .about-description {
@@ -358,7 +363,7 @@ header {
 /* ----------------------------- Skills part ---------------------------------- */
 .skills-container{
     background: #f4f4f4;
-    padding: 3% 0;
+    padding: 3% 0 0 0;
     width: 95%;
     margin: auto;   
 }
@@ -368,17 +373,40 @@ header {
     align-content: stretch;
     vertical-align: top;
 }
-.skills-container  p{
+.skills-container > div > p{
+    display: inline-block;
+    border-style: solid;
     text-align: center;
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
-    font-size: 3rem;   
+    font-size: 3rem; 
+    line-height: 0.5;
+    padding: 2%;
+    border-color: #fac100;
 }
 
 .skills-container .read-more-button{
     text-align: center;
     padding: 10% 0 1% 0;
     background: linear-gradient(0deg, rgba(199,161,219,1) 0%, rgba(228,201,242,1) 15%, rgba(244,244,244,1) 100%);
+}
+
+
+/* ------------------------------ Achievements part -------------------------- */
+.achievements-container{
+    width: 95%;
+    margin: 100px auto 300px auto ;
+}
+.achievements-container  .achieve-title  p{
+    display: inline-block;
+    border-style: solid;
+    text-align: center;
+    color: #a600ff;
+    font-family: 'Hi Melody', cursive;
+    font-size: 3rem; 
+    line-height: 0.5;
+    padding: 2%;
+    border-color: #fac100;
 }
 
 

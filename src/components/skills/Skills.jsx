@@ -21,7 +21,7 @@ function Skills() {
     };
 
     function onButtonClick(e) {
-        if(e.target.innerHTML=="Read More"){
+        if (e.target.innerHTML == "Read More") {
             setSkillStyle(prevValue => {
                 return {
                     ...prevValue,
@@ -42,13 +42,16 @@ function Skills() {
             setBackgr("linear-gradient(0deg, rgba(199,161,219,1) 0%, rgba(228,201,242,1) 15%, rgba(244,244,244,1) 100%)");
             e.target.innerHTML = "Read More";
         }
-        
+
     }
 
     return (
         <div
             className="skills-container">
-            <p><strong>My Skills</strong></p>
+            <div style={{textAlign:"center"}}>
+                <p>My Skills</p>
+            </div>
+
 
             <div className="skills-list">
                 {skills.map((value, index) => {
@@ -70,7 +73,7 @@ function Skills() {
 
             </div>
 
-            <div className="read-more-button" style={{background:backgr}}>
+            <div className="read-more-button" style={{ background: backgr }}>
                 <button onClick={onButtonClick} type="button" class="btn btn-warning">Read More</button>
             </div>
         </div>

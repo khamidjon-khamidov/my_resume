@@ -5,6 +5,7 @@ import Footer from "./main/Footer";
 import Home from "./home/Home"
 import Skills from "./skills/Skills";
 import AdditionalInfo from "./additional/AdditionalInfo"
+import Achievements from "./achievements/Achievements";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
             <AdditionalInfo />
             <About />
             <Skills />
+            <Achievements />
             <Footer />
         </div>
     );

@@ -51,7 +51,7 @@ function AboutDetails() {
     return (
         <div className="about-details-container">
             <p className="my-intro">My Intro</p>
-            <p className="about-me"><strong>About Me</strong></p>
+            <p className="about-me about-title-main">About Me</p>
 
             <p className="about-description">{description}</p>
 
