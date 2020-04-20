@@ -481,6 +481,57 @@ header {
     }
 }
 
+/* ------------------------------- Contact Me ----------------------- */
+.contactme-container{
+    margin-bottom: 200px;
+    text-align: center;
+}
+
+.contactme-container .contactme-title{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contactme-container .contactme-title p {
+    display: inline-block;
+    border-style: solid;
+    text-align: center;
+    color: #a600ff;
+    font-family: 'Hi Melody', cursive;
+    font-size: 3rem;
+    line-height: 0.5;
+    padding: 1% 2%;
+    border-color: #fac100;
+}
+
+.contactme-bottom-cont {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 95%;
+    box-sizing: border-box;
+}
+
+.contactme-bottom-cont .column{
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px;
+}
+
+.contactme-bottom-cont .contact-left{
+    
+}
+
+.contactme-bottom-cont .contact-right{
+   
+}
+
+@media(max-width: 800px) {
+    .contactme-bottom-cont .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
 /* --------------------------- Footer ----------------------- */
 
 footer {

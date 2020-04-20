@@ -6,7 +6,7 @@ const myPosts = [
     },
     {
         postId: "5002",
-        postDescription:"You enthusiastic programmer",
+        postDescription:"Young enthusiastic programmer",
         postLink:"./img/posts/2.jpeg"
     },
     {

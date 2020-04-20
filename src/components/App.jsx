@@ -7,6 +7,8 @@ import Skills from "./skills/Skills";
 import AdditionalInfo from "./additional/AdditionalInfo";
 import Achievements from "./achievements/Achievements";
 import Posts from "./posts/Posts";
+import ContactMe from "./contactme/ContactMe";
+
 
 function App() {
 
@@ -19,6 +21,7 @@ function App() {
             <Skills />
             <Achievements />
             <Posts />
+            <ContactMe />
             <Footer />
         </div>
     );
