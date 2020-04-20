@@ -381,6 +381,11 @@ header {
     background: linear-gradient(0deg, rgba(199,161,219,1) 0%, rgba(228,201,242,1) 15%, rgba(244,244,244,1) 100%);
 }
 
+@keyframes progressMove {
+    from {width: 0%;}
+    to {width: 100%}
+}
+
 
 /* --------------------------- Footer ----------------------- */
 

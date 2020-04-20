@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-
+import Roll from 'react-reveal/Roll';
 
 function Skill(props) {
-    const {name, percentage, list } = props.singleSkill;
+    const { name, percentage, list } = props.singleSkill;
 
     const nameStyle = {
         textAlign: "center",
@@ -14,6 +14,7 @@ function Skill(props) {
 
     const progressStyle = {
         width: percentage + "%",
+        // animation: "progressMove 2s"
     };
 
     const columnStyle = {
@@ -46,54 +47,62 @@ function Skill(props) {
     }
 
     return (
-        <div 
-            // id={skillId}
-            style={props.contStyle}
+        <Roll bottom cascade>
+            <div
+                style={props.contStyle}
             >
-            <h1 style={nameStyle}>{name}</h1>
+                <h1 style={nameStyle}>{name}</h1>
 
-            {/* progressbar */}
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={progressStyle}></div>
-            </div>
+                {/* progressbar */}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={progressStyle}></div>
+                </div>
 
-            {/* column 1 */}
-            <div style={columnStyle}>
-                {col1List.map(value => {
-                    return (
+                {/* column 1 */}
+                <div style={columnStyle}>
+                    {col1List.map(value => {
+                        return (
+                            <p
+                                onMouseOver={itemMouseOver}
+                                onMouseOut={itemMouseOut}
+                                style={singleItemStyle}
+                            >
+                                {value}
+                            </p>
+                        )
+                    })}
+                </div>
+
+                {/* column 2 */}
+                <div style={columnStyle}>
+                    {col2List.map(value =>
+                        (
+                            <p
+                                onMouseOver={itemMouseOver}
+                                onMouseOut={itemMouseOut}
+                                style={singleItemStyle}
+                            >
+                                {value}
+                            </p>
+                        )
+                    )}
+                </div>
+
+                {/* column 3 */}
+                <div style={columnStyle}>
+                    {col3List.map(value => (
                         <p
                             onMouseOver={itemMouseOver}
                             onMouseOut={itemMouseOut}
                             style={singleItemStyle}
-                        >{value}</p>)
-                })}
-            </div>
-
-            {/* column 2 */}
-            <div style={columnStyle}>
-                {col2List.map(value =>
-                    (
-                        <p
-                            onMouseOver={itemMouseOver}
-                            onMouseOut={itemMouseOut}
-                            style={singleItemStyle}
-                        >{value}</p>
+                        >
+                            {value}
+                        </p>
                     )
-                )}
+                    )}
+                </div>
             </div>
-
-            {/* column 3 */}
-            <div style={columnStyle}>
-                {col3List.map(value => (
-                    <p
-                        onMouseOver={itemMouseOver}
-                        onMouseOut={itemMouseOut}
-                        style={singleItemStyle}
-                    >{value}</p>
-                )
-                )}
-            </div>
-        </div>
+        </Roll>
     )
 }
 
