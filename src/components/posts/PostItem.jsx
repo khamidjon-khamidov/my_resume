@@ -41,7 +41,7 @@ function PostItem(props) {
         <Zoom bottom cascade when={isShow}>
             <div style={contStyle}>
                 <img style={imgStyle} src={postLink} alt="img" />
-                <p style={txtContStyle}>{postDescription + " " + postId}</p>
+                <p style={txtContStyle}>{postDescription}</p>
             </div>
         </Zoom>
     )

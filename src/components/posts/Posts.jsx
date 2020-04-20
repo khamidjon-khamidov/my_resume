@@ -12,7 +12,7 @@ function Posts() {
     return (
         <div className="posts-base-container">
             <div className="posts-container">
-                <div className="posts-title" style={{ textAlign: "center" }}>
+                <div className="posts-title" style={{ textAlign: "center", padding:"2% 0 3% 0" }}>
                     <p>Posts</p>
                 </div>
 
