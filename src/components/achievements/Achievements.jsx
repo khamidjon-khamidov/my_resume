@@ -1,7 +1,11 @@
 import React from "react";
-import TabLayout from "./TabLayout";
+import Achievement from "./Achievement";
+import Tabs from "react-bootstrap/Tabs";
+import Tab from "react-bootstrap/Tab";
+import honorsList from "./honorsList";
 
 function Achievements() {
+    const [android, algorithms, others] = honorsList;
 
     return (
         <div className="achievements-container">
@@ -9,31 +13,26 @@ function Achievements() {
                 <p>Achievements</p>
             </div>
 
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-android-tab" data-toggle="tab" href="#nav-android" role="tab" aria-controls="nav-android" aria-selected="true">Android</a>
-                    <a class="nav-item nav-link" id="nav-algorithm-tab" data-toggle="tab" href="#nav-algorithm" role="tab" aria-controls="nav-algorithm" aria-selected="false">Algorithms</a>
-                    <a class="nav-item nav-link" id="nav-others-tab" data-toggle="tab" href="#nav-others" role="tab" aria-controls="nav-others" aria-selected="false">Others</a>
-                </div>
-            </nav>
-            
-            <div class="tab-content" id="nav-tabContent">
-                {/* android */}
-                <div class="tab-pane fade show active" id="nav-android" role="tabpanel" aria-labelledby="nav-android-tab">
-                    Android
-                </div>
+            <Tabs className="myClass" id="noanim-tab-example">
 
-                {/* algorithm */}
-                <div class="tab-pane fade" id="nav-algorithm" role="tabpanel" aria-labelledby="nav-algorithm-tab">
-                    Algorithm
-                </div>
+                <Tab eventKey={1} title="Android">
+                    <Achievement
+                        itemsCollection={android} />
+                </Tab>
 
-                {/* others */}
-                <div class="tab-pane fade" id="nav-others" role="tabpanel" aria-labelledby="nav-others-tab">
-                    Others
-                </div>
-            </div>
-            {/* <TabLayout/> */}
+
+                <Tab eventKey={2} title="Algorithm">
+                    <Achievement
+                        itemsCollection={algorithms}
+                    />
+                </Tab>
+
+                <Tab eventKey={3} title="Others">
+                    <Achievement
+                        itemsCollection={others} />
+                </Tab>
+            </Tabs>
+
         </div>
     )
 }

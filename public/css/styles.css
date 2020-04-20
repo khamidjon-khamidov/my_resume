@@ -293,7 +293,7 @@ header {
     text-align: center;
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
-    font-size: 3rem; 
+    font-size: 3rem;
     line-height: 0.5;
     padding: 2%;
     border-color: #fac100;
@@ -333,82 +333,153 @@ header {
 .about-details-container .about-me-info span:hover {
     color: #fac100;
 }
+
 /* ------------ interests part--------- */
+
 .about-details-container .my-interests {
     line-height: 0;
     padding-top: 5%;
 }
 
-.about-interests-container{
+.about-interests-container {
     width: 100%;
     margin-top: 0;
 }
 
-.about-interests-container p{
+.about-interests-container p {
     display: inline-block;
     margin-right: 10px;
     line-height: 0;
 }
 
-.about-interests-container i{
+.about-interests-container i {
     color: #fac100;
 }
 
-.about-interests-container span{
+.about-interests-container span {
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
     font-size: 1.3rem;
 }
 
 /* ----------------------------- Skills part ---------------------------------- */
-.skills-container{
+
+.skills-container {
     background: #f4f4f4;
     padding: 3% 0 0 0;
     width: 95%;
-    margin: auto;   
+    margin: auto;
 }
-.skills-container .skills-list{
+
+.skills-container .skills-list {
     display: flex;
     flex-wrap: wrap;
     align-content: stretch;
     vertical-align: top;
 }
-.skills-container > div > p{
+
+.skills-container>div>p {
     display: inline-block;
     border-style: solid;
     text-align: center;
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
-    font-size: 3rem; 
+    font-size: 3rem;
     line-height: 0.5;
     padding: 2%;
     border-color: #fac100;
 }
 
-.skills-container .read-more-button{
+.skills-container .read-more-button {
     text-align: center;
     padding: 10% 0 1% 0;
-    background: linear-gradient(0deg, rgba(199,161,219,1) 0%, rgba(228,201,242,1) 15%, rgba(244,244,244,1) 100%);
+    background: linear-gradient(0deg, rgba(199, 161, 219, 1) 0%, rgba(228, 201, 242, 1) 15%, rgba(244, 244, 244, 1) 100%);
 }
-
 
 /* ------------------------------ Achievements part -------------------------- */
-.achievements-container{
-    width: 95%;
-    margin: 100px auto 300px auto ;
+
+.achievements-container {
+    width: 80%;
+    margin: 200px auto 300px auto;
+    /* border-style: solid; */
+    /* border-color: 10px grey; */
 }
-.achievements-container  .achieve-title  p{
+
+.achievements-container .achieve-title p {
     display: inline-block;
     border-style: solid;
     text-align: center;
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
-    font-size: 3rem; 
+    font-size: 3rem;
     line-height: 0.5;
     padding: 2%;
     border-color: #fac100;
 }
 
+.myClass {
+    /* color: #a600ff !important; */
+    background: #fac100;
+}
+
+/* ----------------------------- Posts Container ---------------------------- */
+
+.posts-base-container{
+    margin-bottom: 200px;
+    /* padding: 1%; */
+    text-align: center;
+}
+
+.posts-container {
+    margin: auto;
+    width: 95%;
+    box-sizing: border-box;
+    padding: 2%;
+    background: #f4f4f4;
+}
+
+.posts-container .posts-title p {
+    display: inline-block;
+    border-style: solid;
+    text-align: center;
+    color: #a600ff;
+    font-family: 'Hi Melody', cursive;
+    font-size: 3rem;
+    line-height: 0.5;
+    padding: 1% 2%;
+    border-color: #fac100;
+}
+
+.posts-container .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.posts-container .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.posts-container .column .singleItem {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+@media(max-width: 800px) {
+    .posts-container .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media(max-width: 600px) {
+    .posts-container .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
 
 /* --------------------------- Footer ----------------------- */
 
@@ -425,4 +496,4 @@ footer {
 footer p {
     padding: 0;
     margin: 0;
-} 
+}
