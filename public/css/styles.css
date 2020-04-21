@@ -14,6 +14,10 @@ body {
 html {
     font-family: "Montserrat", sans-serif;
 }
+/* 
+input{
+    border-color:#fac100;
+ } */
 
 /* ------------------------ navbar part -------------------- */
 
@@ -424,7 +428,7 @@ header {
 
 /* ----------------------------- Posts Container ---------------------------- */
 
-.posts-base-container{
+.posts-base-container {
     margin-bottom: 200px;
     /* padding: 1%; */
     text-align: center;
@@ -482,25 +486,26 @@ header {
 }
 
 /* ------------------------------- Contact Me ----------------------- */
-.contactme-container{
+
+.contactme-container {
     margin-bottom: 200px;
     text-align: center;
 }
 
-.contactme-container .contactme-title{
+.contactme-container .contactme-title {
     text-align: center;
     margin-bottom: 30px;
 }
 
 .contactme-container .contactme-title p {
     display: inline-block;
-    border-style: solid;
     text-align: center;
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
     font-size: 3rem;
     line-height: 0.5;
     padding: 1% 2%;
+    border-style: solid;
     border-color: #fac100;
 }
 
@@ -510,20 +515,23 @@ header {
     margin: auto;
     width: 95%;
     box-sizing: border-box;
+    text-align: left;
 }
 
-.contactme-bottom-cont .column{
+.contactme-bottom-cont .column {
     flex: 50%;
     max-width: 50%;
     padding: 0 4px;
 }
 
-.contactme-bottom-cont .contact-left{
-    
+.contactme-bottom-cont .contact-left {
+    padding: 0 5% 0 0;
 }
 
-.contactme-bottom-cont .contact-right{
-   
+.contactme-bottom-cont .contact-right {
+    /* border-style: solid solid solid none;
+    border-color: #fac100;  
+    padding: 20px; */
 }
 
 @media(max-width: 800px) {
@@ -532,10 +540,34 @@ header {
         max-width: 100%;
     }
 }
+
+.contactme-bottom-cont .in-title {
+    text-align: center;
+    color: #a600ff;
+    font-family: 'Hi Melody', cursive;
+}
+
+.contactme_item_single i {
+    font-size: 1.5rem;
+    margin: auto;
+    padding: 10px 0;
+    color: white;
+    transition: color 0.8s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #fac100;
+  box-shadow: inset 0 1px 1px rgba(250, 193, 0, 0.015), 0 0 8px rgba(250, 193, 0, 0.5);
+}
+
+.form-control{
+    border: 1.3px solid #DFDFDF;
+}
+
 /* --------------------------- Footer ----------------------- */
 
 footer {
-    background-color: #0097e6;
+    /* background-color: #0097e6; */
     position: relative;
     color: white;
     text-align: center;
@@ -547,4 +579,5 @@ footer {
 footer p {
     padding: 0;
     margin: 0;
+    color: #a600ff; 
 }
