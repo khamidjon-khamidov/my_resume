@@ -14,28 +14,33 @@ body {
 html {
     font-family: "Montserrat", sans-serif;
 }
-/* 
-input{
-    border-color:#fac100;
- } */
 
 /* ------------------------ navbar part -------------------- */
 
 header {
     background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    margin-top: 0;
+    border-style: none none solid none;
+    border-color:#fac100;
 }
 
 .navbar {
-    padding: 5% 10% 2% 10%;
+    padding: 10px 10% 5px 10%;
 }
 
 .navbar-light .logo {
     height: 25px;
     width: 100px;
     padding: 0%;
+    margin: 0;
 }
 
 .navbar-light .nav-item .nav-link {
+    margin: 0;
     color: #a600ff;
     font-size: 1.4rem;
     font-family: 'Hi Melody', cursive;
@@ -50,7 +55,7 @@ header {
 .home {
     position: relative;
     width: 95%;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
     background: #f4f4f4;
 }
 
@@ -426,11 +431,47 @@ header {
     background: #fac100;
 }
 
+/* ---------------------------------- Projects ----------------------------------- */
+.projects-container {
+    /* padding: "50% 0"; */
+    width: 95%;
+    background: #f4f4f4;
+    margin: auto;
+    text-align: center;
+    color: #a600ff;
+    font-family: 'Hi Melody', cursive;
+}
+
+.projects-container .projects-title p{
+    margin: 30px auto;
+    display: inline-block;
+    border-style: solid;
+    text-align: center;
+    color: #a600ff;
+    font-family: 'Hi Melody', cursive;
+    font-size: 3rem;
+    line-height: 0.0;
+    padding: 30px;
+    border-color: #fac100;
+}
+
+.projects-container .projects-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media(max-width: 600px) {
+    .single-pr-media-item {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
 /* ----------------------------- Posts Container ---------------------------- */
 
 .posts-base-container {
     margin-bottom: 200px;
-    /* padding: 1%; */
     text-align: center;
 }
 
@@ -439,7 +480,7 @@ header {
     width: 95%;
     box-sizing: border-box;
     padding: 2%;
-    background: #f4f4f4;
+    background: white;
 }
 
 .posts-container .posts-title p {
@@ -490,6 +531,9 @@ header {
 .contactme-container {
     margin-bottom: 200px;
     text-align: center;
+    width:95%;
+    margin: auto;
+    background: #f4f4f4;
 }
 
 .contactme-container .contactme-title {
@@ -499,12 +543,13 @@ header {
 
 .contactme-container .contactme-title p {
     display: inline-block;
+    margin-top: 30px;
     text-align: center;
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
     font-size: 3rem;
     line-height: 0.5;
-    padding: 1% 2%;
+    padding: 10px 2%;
     border-style: solid;
     border-color: #fac100;
 }
@@ -571,12 +616,13 @@ footer {
     position: relative;
     color: white;
     text-align: center;
-    padding: 2rem 15rem 3rem 15rem;
     width: 100%;
-    height: 2rem;
+    /* height: 2rem; */
+    padding:  30px 0;
 }
 
 footer p {
+    text-align: center;
     padding: 0;
     margin: 0;
     color: #a600ff; 

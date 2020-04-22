@@ -26,36 +26,33 @@ function Header() {
 
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#footer">Home</a>
+                            <a className="nav-link" href="#sectionhome">Home</a>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#footer">About</a>
+                            <a className="nav-link" href="#sectionabout">About</a>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#pricing">Skills</a>
+                            <a className="nav-link" href="#sectionskills">Skills</a>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#cta">Achievements</a>
+                            <a className="nav-link" href="#sectionachievements">Achievements</a>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#cta">Posts</a>
+                            <a className="nav-link" href="#sectionpersonalprojects">Projects</a>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#cta">Contact</a>
+                            <a className="nav-link" href="#sectionposts">Posts</a>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="#cta">Login</a>
+                            <a className="nav-link" href="#sectioncontactme">Contact</a>
                         </li>
 
-                        <li className="nav-item">
-                            <a className="nav-link" href="#cta">Sign In</a>
-                        </li>
                     </ul>
 
                 </div>

@@ -8,6 +8,7 @@ import AdditionalInfo from "./additional/AdditionalInfo";
 import Achievements from "./achievements/Achievements";
 import Posts from "./posts/Posts";
 import ContactMe from "./contactme/ContactMe";
+import PersonalProjects from "./projects/PersonalProjects";
 
 
 function App() {
@@ -15,14 +16,42 @@ function App() {
     return (
         <div>
             <Header />
-            <Home />
-            <AdditionalInfo />
-            <About />
-            <Skills />
-            <Achievements />
-            <Posts />
-            <ContactMe />
-            <Footer />
+            <div style={{paddingTop: "55px"}}>
+                <section id="sectionhome">
+                    <Home />
+                </section>
+
+
+                <AdditionalInfo />
+
+
+                <section id="sectionabout">
+                    <About />
+                </section>
+
+                <section id="sectionskills">
+                    <Skills />
+                </section>
+
+                <section id="sectionachievements">
+                    <Achievements />
+                </section>
+
+                <section id="sectionpersonalprojects">
+                    <PersonalProjects />
+                </section>
+
+                <section id="sectionposts">
+                    <Posts />
+                </section>
+
+                <section id="sectioncontactme">
+                    <ContactMe />
+                </section>
+
+                <Footer />
+            </div>
+
         </div>
     );
 }
