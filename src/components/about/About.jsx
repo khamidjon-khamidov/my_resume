@@ -3,8 +3,6 @@ import AboutBackgrImg from "./AboutBackgrImg";
 import AboutMyImg from "./AboutMyImg";
 import AboutDetails from "./AboutDetails";
 
-
-
 function About(props) {
 
     return (
