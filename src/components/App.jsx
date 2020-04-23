@@ -13,14 +13,16 @@ import axios from "axios";
 
 function App() {
 
-    const [isUpdate, setIsUpdate] = useState("NO");
+    const [isUpdate, setIsUpdate] = useState(0);
+    const [cvLink, setCvLink] = useState("https://console.firebase.google.com/project/who-is-khamidjon/storage/who-is-khamidjon.appspot.com/files~2Fcv");
 
     useEffect(() => {
         axios.get("http://localhost:9000/someone/shouldupdate")
             .then(res => {
                 if (res.status !== 404)
                     // console.log("is_update = " + res.data[0].is_update)
-                    setIsUpdate(res.data[0].is_update)
+                    setIsUpdate(res.data[0].is_update);
+                    setCvLink(res.data[0].cv_link);
             })
             .catch(err => {})
     }, [])
@@ -30,7 +32,9 @@ function App() {
             <Header />
             <div style={{ paddingTop: "55px" }}>
                 <section id="sectionhome">
-                    <Home />
+                    <Home 
+                        cv_link={cvLink}
+                    />
                 </section>
 
 

@@ -5,7 +5,7 @@ import GooglePlayBtn from "../buttons/GooglePlayBtn";
 import Social from "./Social";
 import MyPicture from "./right/MyPicture";
 
-function Home() {
+function Home(props) {
 
     return (
         <div className="home">
@@ -23,7 +23,9 @@ function Home() {
                 </div>
 
                 <div className="home-left-buttons">
-                    <DownloadBtn />
+                    <DownloadBtn 
+                        cv_link={props.cv_link}
+                    />
                     <GooglePlayBtn />
                 </div>
 

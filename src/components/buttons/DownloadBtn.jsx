@@ -1,6 +1,6 @@
 import React from "react";
 
-function DownloadBtn() {
+function DownloadBtn(props) {
 
     const btnStyle = {
         borderRadius: "20px",
@@ -11,7 +11,7 @@ function DownloadBtn() {
     }
 
     const downloadCV = () => {
-        window.location.href = "https://firebasestorage.googleapis.com/v0/b/who-is-khamidjon.appspot.com/o/cv%2FCV_Programming.docx?alt=media&token=0ab13a3a-9ad4-4741-a44d-700bb211cad9";
+        window.location.href = props.cv_link;
     }
 
     return (
