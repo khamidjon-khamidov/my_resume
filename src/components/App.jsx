@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./main/Header";
 import Footer from "./main/Footer";
 import Home from "./home/Home"
+import About from "./about/About";
 import Skills from "./skills/Skills";
 import AdditionalInfo from "./additional/AdditionalInfo";
 import Achievements from "./achievements/Achievements";
