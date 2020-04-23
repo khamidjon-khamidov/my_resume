@@ -19,8 +19,7 @@ function Home() {
                 </div>
 
                 <div className="home-left-description">
-                    <p>I am an enthusiastic Android and Junior Web Developer who is keen on</p>
-                    <p>learning and working with a friendly team.</p>
+                    <p>I am an enthusiastic Android and Junior Web Developer who is keen on learning and working with a friendly team.</p>
                 </div>
 
                 <div className="home-left-buttons">
