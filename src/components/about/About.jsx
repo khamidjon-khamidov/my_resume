@@ -9,10 +9,11 @@ function About() {
 
     return (
         <div className="about-container">
-           <AboutBackgrImg />
+           {/* <AboutBackgrImg /> */}
            <AboutMyImg />
            <AboutDetails />
         </div>
+
     );
 }
 
