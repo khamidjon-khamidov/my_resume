@@ -1,5 +1,4 @@
 import React from "react";
-import AboutBackgrImg from "./AboutBackgrImg";
 import AboutMyImg from "./AboutMyImg";
 import AboutDetails from "./AboutDetails";
 
@@ -7,11 +6,11 @@ function About(props) {
 
     return (
         <div className="about-container">
-           <AboutBackgrImg />
            <AboutMyImg />
            <AboutDetails
             shouldUpdate={props.shouldUpdate} /> 
         </div>
+
     );
 }
 

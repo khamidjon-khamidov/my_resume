@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import aboutMeDetails from "./aboutMeDetails";
 import AboutMyInterests from "./AboutMyInterests";
-import axios from "axios"
+
 
 function calculateExperience() {
     var startDate = new Date("2/Sep/2017 08:00:00");
@@ -23,22 +23,7 @@ function calculateExperience() {
         hoursStr + ":" + minsStr + ":" + secondsStr
 }
 
-function AboutDetails(props) {
-    const [aboutMe, setAboutMe] = useState(aboutMeDetails);
-
-    useEffect(() => {
-        if(props.shouldUpdate>0){
-            axios.get("http://localhost:9000/someone/aboutme")
-            .then(res => {
-                // console.log(aboutMe)
-                // console.log(res.data[0])
-                if (res.status !== 404)
-                    setAboutMe(res.data[0])
-            })
-            .catch(err => {})
-        }
-    }, [props.shouldUpdate])
-
+function AboutDetails() {
 
     const [experiencePeriod, setExperiencePeriod] = useState(calculateExperience);
 
@@ -66,36 +51,37 @@ function AboutDetails(props) {
     const description = "I have been learning programming for about 3 years. Over this period, I have learned Algorithms in C/C++, Android Development in Java/Kotlin and Web development using html, css, javasrcipt, reactjs for frontend and nodejs, mongodb for backend.";
 
     return (
-        <div className="about-details-container">
-            <p className="my-intro">My Intro</p>
-            <p className="about-me about-title-main">About Me</p>
+        <div className="about-details-base-cont">
+            <div className="about-details-container">
+                <p className="my-intro">My Intro</p>
+                <p className="about-me"><strong>About Me</strong></p>
 
-            <p className="about-description">{description}</p>
+                <p className="about-description">{description}</p>
 
-            {/* about me details */}
-            <div className="about-me-info">
-                <p className="my-name"><i className="fas fa-user"></i> <strong>Name:</strong> <span>Khamidjon Khamidov</span></p>
+                {/* about me details */}
+                <div className="about-me-info">
+                    <p className="my-name"><i class="fas fa-user"></i> <strong>Name:</strong> <span>Khamidjon Khamidov</span></p>
 
-                <p className="my-phone"><i className="fas fa-phone"></i> <strong>Phone:</strong> <span
-                    onClick={() => copyToClipboard(aboutMe.phone)}
-                    style={{ cursor: "pointer" }}>{aboutMe.phone}</span></p>
+                    <p className="my-phone"><i class="fas fa-phone"></i> <strong>Phone:</strong> <span
+                        onClick={() => copyToClipboard(aboutMeDetails.phone)}
+                        style={{ cursor: "pointer" }}>{aboutMeDetails.phone}</span></p>
 
-                <p className="my-email"><i className="fas fa-envelope"></i> <strong>Email:</strong> <span
-                    onClick={() => copyToClipboard(aboutMe.email)}
-                    style={{ cursor: "pointer" }}
-                >{aboutMe.email}</span></p>
+                    <p className="my-email"><i class="fas fa-envelope"></i> <strong>Email:</strong> <span
+                        onClick={() => copyToClipboard(aboutMeDetails.phone)}
+                        style={{ cursor: "pointer" }}
+                    >{aboutMeDetails.email}</span></p>
 
-                <p className="my-address"><i className="fas fa-address-card"></i> <strong>Address:</strong> <span>{aboutMe.address}</span></p>
+                    <p className="my-address"><i class="fas fa-address-card"></i> <strong>Address:</strong> <span>{aboutMeDetails.address}</span></p>
 
-                <p className="my-address"><i className="fas fa-graduation-cap"></i> <strong>Education:</strong> <a href={aboutMe.education[0].link}>{aboutMeDetails.education[0].name}</a> <span>and</span> <a href={aboutMeDetails.education[1].link}>{aboutMeDetails.education[1].name}</a></p>
+                    <p className="my-address"><i class="fas fa-graduation-cap"></i> <strong>Education:</strong> <a href={aboutMeDetails.education[0].link}>{aboutMeDetails.education[0].name}</a> <span>and</span> <a href={aboutMeDetails.education[1].link}>{aboutMeDetails.education[1].name}</a></p>
 
-                <p className="my-experience"><i className="fas fa-briefcase"></i> <strong>Experience:</strong> <span>{experiencePeriod}</span></p>
+                    <p className="my-experience"><i class="fas fa-briefcase"></i> <strong>Experience:</strong> <span>{experiencePeriod}</span></p>
+                </div>
+
+                {/* my interests */}
+                <p className="my-interests"><strong>My Interests</strong></p>
+                <AboutMyInterests />
             </div>
-
-            {/* my interests */}
-            <p className="my-interests"><strong>My Interests</strong></p>
-            <AboutMyInterests />
-
         </div>
     )
 }
