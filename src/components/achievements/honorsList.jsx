@@ -52,7 +52,7 @@ const honorsList = [
             },
             {
                 itemId: "3009",
-                itemTitle: "Unit Testing.png",
+                itemTitle: "Unit Testing",
                 itemDescription:"codingwithmitch.com",
                 itemLink:"./img/android/Unit Testing.png"
             },

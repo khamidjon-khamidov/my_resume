@@ -1,36 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SingleProject from "./SingleProject";
 import myProjects from "./myProjects";
+import axios from "axios"
 
-function PersonalProjects() {
+function PersonalProjects(props) {
+
+    const [projects, setProjects] = useState(myProjects);
+
+    useEffect(() => {
+        if (props.shouldUpdate > 0) {
+            axios.get("http://localhost:9000/someone/projects")
+                .then(res => {
+                    // console.log(projects)
+                    // console.log(res.data[0])
+                    if (res.status !== 404)
+                        setProjects(res.data)
+                })
+                .catch(err => { })
+        }
+    }, [props.shouldUpdate])
 
     return (
-        // <div style={{textAlign:"center"}}>
         <div className="projects-container">
             <div className="projects-title">
                 <p>Projects</p>
             </div>
 
             <div className="projects-row">
-                <SingleProject
-                    aProject={myProjects[0]}
-                    aPercent="70%"
-                />
 
-                <SingleProject
-                    aProject={myProjects[2]}
-                    aPercent="40%"
-                />
-
-                <SingleProject
-                    aProject={myProjects[3]}
-                    aPercent="40%"
-                />
-
-                <SingleProject
-                    aProject={myProjects[1]}
-                    aPercent="70%"
-                />
+                {projects.map(value => (
+                    <SingleProject
+                        aProject={value}
+                    />
+                ))}
             </div>
 
         </div>

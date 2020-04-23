@@ -1,13 +1,28 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import myPosts from "./myPosts";
 import PostItem from "./PostItem";
+import axios from "axios";
+
 
 function Posts() {
 
-    const col1List = myPosts.filter((_, i) => (i % 4 === 0));
-    const col2List = myPosts.filter((_, i) => (i % 4 === 1));
-    const col3List = myPosts.filter((_, i) => (i % 4 === 2));
-    const col4List = myPosts.filter((_, i) => (i % 4 === 3));
+    const [posts, setPosts] = useState(myPosts);
+
+    useEffect(() => {
+        axios.get("http://localhost:9000/someone/posts")
+        .then(res => {
+            // console.log(res);
+            setPosts(res.data);
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    },[])
+
+    const col1List = posts.filter((_, i) => (i % 4 === 0));
+    const col2List = posts.filter((_, i) => (i % 4 === 1));
+    const col3List = posts.filter((_, i) => (i % 4 === 2));
+    const col4List = posts.filter((_, i) => (i % 4 === 3));
 
     return (
         <div className="posts-base-container">

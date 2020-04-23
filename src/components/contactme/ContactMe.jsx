@@ -1,11 +1,28 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import contactInfo from "./contactInfo";
 import ContactItem from "./ContactItem";
 import aboutMeDetails from "../about/aboutMeDetails";
 import InputForm from "./InputForm";
 import Bounce from 'react-reveal/Bounce';
+import axios from "axios";
 
-function ContactMe() {
+
+function ContactMe(props) {
+
+    const [aboutMe, setAboutMe] = useState(aboutMeDetails);
+
+    useEffect(() => {
+        if(props.shouldUpdate>0){
+            axios.get("http://localhost:9000/someone/aboutme")
+            .then(res => {
+                // console.log(res.data)
+                if (res.status !== 404)
+                    setAboutMe(res.data[0])
+            })
+            .catch(err => {})
+        }
+    }, [props.shouldUpdate])
+
 
     return (
         <div>
@@ -28,21 +45,21 @@ function ContactMe() {
                                 itemId="addressIDD"
                                 itemIcon="fas fa-map-marker-alt"
                                 itemTitle="Address"
-                                itemDes={aboutMeDetails.address}
+                                itemDes={aboutMe.address}
                             />
 
                             <ContactItem
                                 itemId="phoneIDD"
                                 itemIcon="fas fa-phone-alt"
                                 itemTitle="Phone"
-                                itemDes={aboutMeDetails.phone}
+                                itemDes={aboutMe.phone}
                             />
 
                             <ContactItem
                                 itemId="emailIDD"
                                 itemIcon="far fa-envelope"
                                 itemTitle="Email"
-                                itemDes={aboutMeDetails.email}
+                                itemDes={aboutMe.email}
                             />
                         </div>
 

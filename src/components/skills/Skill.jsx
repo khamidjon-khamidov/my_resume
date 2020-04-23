@@ -54,15 +54,16 @@ function Skill(props) {
                 <h1 style={nameStyle}>{name}</h1>
 
                 {/* progressbar */}
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={progressStyle}></div>
+                <div className="progress">
+                    <div className="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={progressStyle}></div>
                 </div>
 
                 {/* column 1 */}
                 <div style={columnStyle}>
-                    {col1List.map(value => {
+                    {col1List.map((value, index) => {
                         return (
                             <p
+                                key={props.id + "c1" + index}
                                 onMouseOver={itemMouseOver}
                                 onMouseOut={itemMouseOut}
                                 style={singleItemStyle}
@@ -75,9 +76,10 @@ function Skill(props) {
 
                 {/* column 2 */}
                 <div style={columnStyle}>
-                    {col2List.map(value =>
+                    {col2List.map((value, index) =>
                         (
                             <p
+                                key={props.id + "c2" + index}
                                 onMouseOver={itemMouseOver}
                                 onMouseOut={itemMouseOut}
                                 style={singleItemStyle}
@@ -90,8 +92,9 @@ function Skill(props) {
 
                 {/* column 3 */}
                 <div style={columnStyle}>
-                    {col3List.map(value => (
+                    {col3List.map((value, index) => (
                         <p
+                            key={props.id+"c3"+index}
                             onMouseOver={itemMouseOver}
                             onMouseOut={itemMouseOut}
                             style={singleItemStyle}

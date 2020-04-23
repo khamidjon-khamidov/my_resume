@@ -1,8 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Skill from "./Skill";
 import skills from "./skillsList"
+import axios from "axios"
 
-function Skills() {
+function Skills(props) {
+
+    const [mySkills, setMySkills] = useState(skills);
+
+    useEffect(() => {
+        if(props.shouldUpdate>0){
+            axios.get("http://localhost:9000/someone/skills")
+            .then(res => {
+                // console.log(res.data)
+                if (res.status !== 404)
+                    setMySkills(res.data)
+            })
+            .catch(err => {})
+        }
+    }, [props.shouldUpdate])
 
     const [skillStyle, setSkillStyle] = useState({
         display: "none",
@@ -48,22 +63,24 @@ function Skills() {
     return (
         <div
             className="skills-container">
-            <div style={{textAlign:"center"}}>
+            <div style={{ textAlign: "center" }}>
                 <p>My Skills</p>
             </div>
 
 
             <div className="skills-list">
-                {skills.map((value, index) => {
+                {mySkills.map((value, index) => {
                     if (index <= 3) {
                         return (
                             <Skill
+                                key={"mykey" + value.id}
                                 contStyle={skillStyle2}
                                 singleSkill={value} />
                         )
                     } else {
                         return (
                             <Skill
+                                key={"mykey" + value.id}
                                 contStyle={skillStyle}
                                 singleSkill={value} />
                         )
@@ -74,7 +91,7 @@ function Skills() {
             </div>
 
             <div className="read-more-button" style={{ background: backgr }}>
-                <button onClick={onButtonClick} type="button" class="btn btn-warning">Read More</button>
+                <button onClick={onButtonClick} type="button" className="btn btn-warning">Read More</button>
             </div>
         </div>
     )

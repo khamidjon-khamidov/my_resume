@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./main/Header";
 import About from "./about/About";
 import Footer from "./main/Footer";
@@ -9,14 +9,26 @@ import Achievements from "./achievements/Achievements";
 import Posts from "./posts/Posts";
 import ContactMe from "./contactme/ContactMe";
 import PersonalProjects from "./projects/PersonalProjects";
-
+import axios from "axios";
 
 function App() {
+
+    const [isUpdate, setIsUpdate] = useState("NO");
+
+    useEffect(() => {
+        axios.get("http://localhost:9000/someone/shouldupdate")
+            .then(res => {
+                if (res.status !== 404)
+                    // console.log("is_update = " + res.data[0].is_update)
+                    setIsUpdate(res.data[0].is_update)
+            })
+            .catch(err => {})
+    }, [])
 
     return (
         <div>
             <Header />
-            <div style={{paddingTop: "55px"}}>
+            <div style={{ paddingTop: "55px" }}>
                 <section id="sectionhome">
                     <Home />
                 </section>
@@ -26,27 +38,39 @@ function App() {
 
 
                 <section id="sectionabout">
-                    <About />
+                    <About 
+                        shouldUpdate={isUpdate}
+                    />
                 </section>
 
                 <section id="sectionskills">
-                    <Skills />
+                    <Skills 
+                        shouldUpdate={isUpdate}
+                    />
                 </section>
 
                 <section id="sectionachievements">
-                    <Achievements />
+                    <Achievements 
+                        shouldUpdate={isUpdate}
+                    />
                 </section>
 
                 <section id="sectionpersonalprojects">
-                    <PersonalProjects />
+                    <PersonalProjects 
+                        shouldUpdate={isUpdate}
+                    />
                 </section>
 
                 <section id="sectionposts">
-                    <Posts />
+                    <Posts
+                        shouldUpdate={isUpdate}
+                    />
                 </section>
 
                 <section id="sectioncontactme">
-                    <ContactMe />
+                    <ContactMe 
+                        shouldUpdate={isUpdate}
+                    />
                 </section>
 
                 <Footer />

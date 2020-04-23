@@ -1,27 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import aboutMeDetails from "./aboutMeDetails";
 import AboutMyInterests from "./AboutMyInterests";
+import axios from "axios"
 
-function AboutDetails() {
-    function calculateExperience() {
-        var startDate = new Date("2/Sep/2017 08:00:00");
-        var currentDate = new Date();
+function calculateExperience() {
+    var startDate = new Date("2/Sep/2017 08:00:00");
+    var currentDate = new Date();
 
-        var diff = currentDate.getTime() - startDate.getTime();
-        var years = Math.floor(diff / 1000 / 24 / 60 / 60 / 30 / 12); diff -= years * (1000 * 24 * 60 * 60 * 30 * 12);
-        var months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30)); diff -= months * (1000 * 24 * 60 * 60 * 30);
-        var days = Math.floor(diff / (1000 * 60 * 60 * 24)); diff -= days * (1000 * 60 * 60 * 24);
-        var hours = Math.floor(diff / (1000 * 60 * 60)); diff -= hours * (1000 * 60 * 60);
-        var mins = Math.floor(diff / (1000 * 60)); diff -= mins * (1000 * 60);
-        var seconds = Math.floor(diff / (1000)); diff -= seconds * (1000);
+    var diff = currentDate.getTime() - startDate.getTime();
+    var years = Math.floor(diff / 1000 / 24 / 60 / 60 / 30 / 12); diff -= years * (1000 * 24 * 60 * 60 * 30 * 12);
+    var months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30)); diff -= months * (1000 * 24 * 60 * 60 * 30);
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24)); diff -= days * (1000 * 60 * 60 * 24);
+    var hours = Math.floor(diff / (1000 * 60 * 60)); diff -= hours * (1000 * 60 * 60);
+    var mins = Math.floor(diff / (1000 * 60)); diff -= mins * (1000 * 60);
+    var seconds = Math.floor(diff / (1000)); diff -= seconds * (1000);
 
-        var hoursStr = ((hours < 10) ? "0" : "") + hours.toString();
-        var minsStr = ((mins < 10) ? "0" : "") + mins;
-        var secondsStr = ((seconds < 10) ? "0" : "") + seconds;
+    var hoursStr = ((hours < 10) ? "0" : "") + hours.toString();
+    var minsStr = ((mins < 10) ? "0" : "") + mins;
+    var secondsStr = ((seconds < 10) ? "0" : "") + seconds;
 
-        return "" + years + " years " + months + " months " + days + " days " +
-            hoursStr + ":" + minsStr + ":" + secondsStr
-    }
+    return "" + years + " years " + months + " months " + days + " days " +
+        hoursStr + ":" + minsStr + ":" + secondsStr
+}
+
+function AboutDetails(props) {
+    const [aboutMe, setAboutMe] = useState(aboutMeDetails);
+
+    useEffect(() => {
+        if(props.shouldUpdate>0){
+            axios.get("http://localhost:9000/someone/aboutme")
+            .then(res => {
+                // console.log(aboutMe)
+                // console.log(res.data[0])
+                if (res.status !== 404)
+                    setAboutMe(res.data[0])
+            })
+            .catch(err => {})
+        }
+    }, [props.shouldUpdate])
+
 
     const [experiencePeriod, setExperiencePeriod] = useState(calculateExperience);
 
@@ -60,17 +77,17 @@ function AboutDetails() {
                 <p className="my-name"><i className="fas fa-user"></i> <strong>Name:</strong> <span>Khamidjon Khamidov</span></p>
 
                 <p className="my-phone"><i className="fas fa-phone"></i> <strong>Phone:</strong> <span
-                    onClick={() => copyToClipboard(aboutMeDetails.phone)}
-                    style={{ cursor: "pointer" }}>{aboutMeDetails.phone}</span></p>
+                    onClick={() => copyToClipboard(aboutMe.phone)}
+                    style={{ cursor: "pointer" }}>{aboutMe.phone}</span></p>
 
                 <p className="my-email"><i className="fas fa-envelope"></i> <strong>Email:</strong> <span
-                    onClick={() => copyToClipboard(aboutMeDetails.phone)}
+                    onClick={() => copyToClipboard(aboutMe.email)}
                     style={{ cursor: "pointer" }}
-                >{aboutMeDetails.email}</span></p>
+                >{aboutMe.email}</span></p>
 
-                <p className="my-address"><i className="fas fa-address-card"></i> <strong>Address:</strong> <span>{aboutMeDetails.address}</span></p>
+                <p className="my-address"><i className="fas fa-address-card"></i> <strong>Address:</strong> <span>{aboutMe.address}</span></p>
 
-                <p className="my-address"><i className="fas fa-graduation-cap"></i> <strong>Education:</strong> <a href={aboutMeDetails.education[0].link}>{aboutMeDetails.education[0].name}</a> <span>and</span> <a href={aboutMeDetails.education[1].link}>{aboutMeDetails.education[1].name}</a></p>
+                <p className="my-address"><i className="fas fa-graduation-cap"></i> <strong>Education:</strong> <a href={aboutMe.education[0].link}>{aboutMeDetails.education[0].name}</a> <span>and</span> <a href={aboutMeDetails.education[1].link}>{aboutMeDetails.education[1].name}</a></p>
 
                 <p className="my-experience"><i className="fas fa-briefcase"></i> <strong>Experience:</strong> <span>{experiencePeriod}</span></p>
             </div>

@@ -5,13 +5,14 @@ import AboutDetails from "./AboutDetails";
 
 
 
-function About() {
+function About(props) {
 
     return (
         <div className="about-container">
            <AboutBackgrImg />
            <AboutMyImg />
-           <AboutDetails /> 
+           <AboutDetails
+            shouldUpdate={props.shouldUpdate} /> 
         </div>
     );
 }

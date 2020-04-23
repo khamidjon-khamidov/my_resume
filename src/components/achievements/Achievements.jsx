@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Achievement from "./Achievement";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import honorsList from "./honorsList";
+import axios from "axios";
 
-function Achievements() {
-    const [android, algorithms, others] = honorsList;
+function Achievements(props) {
+
+    const [honors, setHonors] = useState(honorsList);
+
+    useEffect(() => {
+        if (props.shouldUpdate > 0) {
+            axios.get("http://localhost:9000/someone/honors")
+                .then(res => {
+                    // console.log(res.data)
+                    if (res.status !== 404)
+                        setHonors(res.data)
+                })
+                .catch(err => { })
+        }
+    }, [props.shouldUpdate])
 
     return (
         <div className="achievements-container">
@@ -15,22 +29,14 @@ function Achievements() {
 
             <Tabs className="myClass" id="noanim-tab-example">
 
-                <Tab eventKey={1} title="Android">
-                    <Achievement
-                        itemsCollection={android} />
-                </Tab>
+                {honors.map((value, index) => (
+                        <Tab eventKey={index+1} title={value.listTitle}>
+                            <Achievement
+                                itemsCollection={value} />
+                        </Tab>
+                    )
+                )}
 
-
-                <Tab eventKey={2} title="Algorithm">
-                    <Achievement
-                        itemsCollection={algorithms}
-                    />
-                </Tab>
-
-                <Tab eventKey={3} title="Others">
-                    <Achievement
-                        itemsCollection={others} />
-                </Tab>
             </Tabs>
 
         </div>
