@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import myPosts from "./myPosts";
 import PostItem from "./PostItem";
 import axios from "axios";
@@ -10,14 +10,14 @@ function Posts() {
 
     useEffect(() => {
         axios.get("http://localhost:9000/someone/posts")
-        .then(res => {
-            // console.log(res);
-            setPosts(res.data);
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    },[])
+            .then(res => {
+                // console.log(res);
+                setPosts(res.data);
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
 
     const col1List = posts.filter((_, i) => (i % 4 === 0));
     const col2List = posts.filter((_, i) => (i % 4 === 1));
@@ -27,7 +27,7 @@ function Posts() {
     return (
         <div className="posts-base-container">
             <div className="posts-container">
-                <div className="posts-title" style={{ textAlign: "center", padding:"2% 0 3% 0" }}>
+                <div className="posts-title" style={{ textAlign: "center", padding: "2% 0 3% 0" }}>
                     <p>Posts</p>
                 </div>
 
@@ -37,6 +37,7 @@ function Posts() {
                         <div className="column">
                             {col1List.map((value) => (
                                 <PostItem
+                                    key={value.postId + "key"}
                                     postItem={value}
                                 />
                             ))}
@@ -45,6 +46,7 @@ function Posts() {
                         <div className="column">
                             {col2List.map((value) => (
                                 <PostItem
+                                    key={value.postId + "key"}
                                     postItem={value}
                                 />
                             ))}
@@ -53,6 +55,7 @@ function Posts() {
                         <div className="column">
                             {col3List.map((value) => (
                                 <PostItem
+                                    key={value.postId+"key"}
                                     postItem={value}
                                 />
                             ))}
@@ -61,6 +64,7 @@ function Posts() {
                         <div className="column">
                             {col4List.map((value) => (
                                 <PostItem
+                                    key={value.postId+"key"}
                                     postItem={value}
                                 />
                             ))}

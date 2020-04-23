@@ -30,8 +30,9 @@ function Achievements(props) {
             <Tabs className="myClass" id="noanim-tab-example">
 
                 {honors.map((value, index) => (
-                        <Tab eventKey={index+1} title={value.listTitle}>
+                        <Tab eventKey={index+1} title={value.listTitle} key={value.listId+"tab"}>
                             <Achievement
+                                key={value.listId+"key"}
                                 itemsCollection={value} />
                         </Tab>
                     )

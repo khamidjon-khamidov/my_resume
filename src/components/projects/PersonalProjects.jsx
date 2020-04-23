@@ -30,6 +30,7 @@ function PersonalProjects(props) {
 
                 {projects.map(value => (
                     <SingleProject
+                        key={value.projectId+"key"}
                         aProject={value}
                     />
                 ))}

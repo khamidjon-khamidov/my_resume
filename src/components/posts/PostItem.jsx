@@ -32,13 +32,8 @@ function PostItem(props) {
         textAlign: "center"
     }
 
-    const [isShow, setIsShow] = useState(false);
-    setTimeout(function(){
-        setIsShow(true);
-    }, 100);    
-
     return (
-        <Zoom bottom cascade when={isShow}>
+        <Zoom bottom cascade>
             <div style={contStyle}>
                 <img style={imgStyle} src={postLink} alt="img" />
                 <p style={txtContStyle}>{postDescription}</p>
