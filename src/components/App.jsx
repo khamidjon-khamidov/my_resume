@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Header from "./main/Header";
-import About from "./about/About";
 import Footer from "./main/Footer";
 import Home from "./home/Home"
 import Skills from "./skills/Skills";

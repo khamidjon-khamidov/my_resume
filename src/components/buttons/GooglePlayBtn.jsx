@@ -2,11 +2,6 @@ import React from "react";
 
 function GooglePlayBtn() {
 
-    const conStyle = {
-        display: "inline-block",
-        margin: "30px"
-    }
-
     const btnStyle = {
         whiteSpace: "pre-wrap",
         borderRadius: "20px",
@@ -18,7 +13,7 @@ function GooglePlayBtn() {
 
 
     return (
-        <div style={conStyle}>
+        <div className="btn-style google-btn">
             <button
                 style={btnStyle}
                 type="button"
