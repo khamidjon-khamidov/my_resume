@@ -11,10 +11,15 @@ function GooglePlayBtn() {
         color: "white"
     }
 
+    const downloadGooglePlay = () => {
+        const googlePlayLink = "";
+        window.open(googlePlayLink, "_blank")
+    }
 
     return (
         <div className="btn-style google-btn">
             <button
+                onClick={downloadGooglePlay}
                 style={btnStyle}
                 type="button"
                 className="btn btn-warning"
