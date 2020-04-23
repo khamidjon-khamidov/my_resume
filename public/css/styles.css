@@ -65,10 +65,26 @@ header {
     /* padding-top: 63px; */
 }
 
-@media(max-width: 600px){
-    .home-social{
+.btn-style {
+    display: inline-block;
+    margin: 10px 30px;
+}
+
+
+@media(max-width: 800px) {
+    .google-btn{
+        margin: 10px 10px 80px 10px;
+    }
+}
+
+@media(max-width: 600px) {
+    .home-social {
         flex: 10%;
         max-width: 10%;
+    }
+
+    .btn-style{
+        margin: 10px;
     }
 }
 
@@ -94,8 +110,8 @@ header {
     /* vertical-align: top; */
 }
 
-@media(max-width: 600px){
-    .home-left{
+@media(max-width: 600px) {
+    .home-left {
         flex: 90%;
         max-width: 90%;
     }
@@ -132,6 +148,12 @@ header {
 .home-left-buttons {
     margin-top: 70px;
     text-align: center;
+}
+
+@media(max-width: 600px) {
+    .home-left-buttons {
+        margin-top: 10px;
+    }
 }
 
 /* ---------- home right part --------- */

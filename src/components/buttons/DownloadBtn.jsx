@@ -2,11 +2,6 @@ import React from "react";
 
 function DownloadBtn() {
 
-    const conStyle = {
-        display: "inline-block",
-        margin: "30px"
-    }
-
     const btnStyle = {
         borderRadius: "20px",
         color: "#a600ff",
@@ -16,7 +11,7 @@ function DownloadBtn() {
     }
 
     return (
-        <div style={conStyle}>
+        <div className="btn-style">
             <button
                 style={btnStyle}
                 type="button"
