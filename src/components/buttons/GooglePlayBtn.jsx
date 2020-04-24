@@ -12,7 +12,7 @@ function GooglePlayBtn() {
     }
 
     const downloadGooglePlay = () => {
-        const googlePlayLink = "";
+        const googlePlayLink = "https://play.google.com/store/apps/details?id=com.hamidjonhamidov.whoiskhamidjon";
         window.open(googlePlayLink, "_blank")
     }
 

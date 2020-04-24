@@ -4,20 +4,23 @@ import PostItem from "./PostItem";
 import axios from "axios";
 
 
-function Posts() {
+function Posts(props) {
 
     const [posts, setPosts] = useState(myPosts);
 
     useEffect(() => {
-        axios.get("http://localhost:9000/someone/posts")
-            .then(res => {
-                // console.log(res);
-                setPosts(res.data);
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }, [])
+        console.log("update? = " + props.shouldUpdate);
+        if (props.shouldUpdate > 0) {
+            axios.get("http://localhost:9000/someone/posts")
+                .then(res => {
+                    // console.log(res);
+                    setPosts(res.data);
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
+    }, [props.shouldUpdate])
 
     const col1List = posts.filter((_, i) => (i % 4 === 0));
     const col2List = posts.filter((_, i) => (i % 4 === 1));
@@ -55,7 +58,7 @@ function Posts() {
                         <div className="column">
                             {col3List.map((value) => (
                                 <PostItem
-                                    key={value.postId+"key"}
+                                    key={value.postId + "key"}
                                     postItem={value}
                                 />
                             ))}
@@ -64,7 +67,7 @@ function Posts() {
                         <div className="column">
                             {col4List.map((value) => (
                                 <PostItem
-                                    key={value.postId+"key"}
+                                    key={value.postId + "key"}
                                     postItem={value}
                                 />
                             ))}

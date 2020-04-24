@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import aboutMeDetails from "./aboutMeDetails";
 import AboutMyInterests from "./AboutMyInterests";
-
+import axios from "axios";
 
 function calculateExperience() {
     var startDate = new Date("2/Sep/2017 08:00:00");
@@ -23,9 +23,21 @@ function calculateExperience() {
         hoursStr + ":" + minsStr + ":" + secondsStr
 }
 
-function AboutDetails() {
-
+function AboutDetails(props) {
+    const [aboutMe, setAboutMe] = useState(aboutMeDetails);
     const [experiencePeriod, setExperiencePeriod] = useState(calculateExperience);
+
+    useEffect(function(){
+        if(props.shouldUpdate > 0){
+            axios.get("http://localhost:9000/someone/aboutme")
+            .then(res => {
+                if (res.status !== 404)
+                    // console.log("is_update = " + res.data[0].is_update)
+                    setAboutMe(res.data[0]);
+            })
+            .catch(err => {})
+        }
+    }, [props.shouldUpdate])
 
     setInterval(function () {
         setExperiencePeriod(calculateExperience());
@@ -63,17 +75,17 @@ function AboutDetails() {
                     <p className="my-name"><i class="fas fa-user"></i> <strong>Name:</strong> <span>Khamidjon Khamidov</span></p>
 
                     <p className="my-phone"><i class="fas fa-phone"></i> <strong>Phone:</strong> <span
-                        onClick={() => copyToClipboard(aboutMeDetails.phone)}
-                        style={{ cursor: "pointer" }}>{aboutMeDetails.phone}</span></p>
+                        onClick={() => copyToClipboard(aboutMe.phone)}
+                        style={{ cursor: "pointer" }}>{aboutMe.phone}</span></p>
 
                     <p className="my-email"><i class="fas fa-envelope"></i> <strong>Email:</strong> <span
-                        onClick={() => copyToClipboard(aboutMeDetails.phone)}
+                        onClick={() => copyToClipboard(aboutMe.phone)}
                         style={{ cursor: "pointer" }}
-                    >{aboutMeDetails.email}</span></p>
+                    >{aboutMe.email}</span></p>
 
-                    <p className="my-address"><i class="fas fa-address-card"></i> <strong>Address:</strong> <span>{aboutMeDetails.address}</span></p>
+                    <p className="my-address"><i class="fas fa-address-card"></i> <strong>Address:</strong> <span>{aboutMe.address}</span></p>
 
-                    <p className="my-address"><i class="fas fa-graduation-cap"></i> <strong>Education:</strong> <a href={aboutMeDetails.education[0].link}>{aboutMeDetails.education[0].name}</a> <span>and</span> <a href={aboutMeDetails.education[1].link}>{aboutMeDetails.education[1].name}</a></p>
+                    <p className="my-address"><i class="fas fa-graduation-cap"></i> <strong>Education:</strong> <a href={aboutMe.education[0].link}>{aboutMe.education[0].name}</a> <span>and</span> <a href={aboutMe.education[1].link}>{aboutMe.education[1].name}</a></p>
 
                     <p className="my-experience"><i class="fas fa-briefcase"></i> <strong>Experience:</strong> <span>{experiencePeriod}</span></p>
                 </div>
