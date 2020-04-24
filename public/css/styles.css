@@ -679,18 +679,17 @@ header {
     padding: 0 5% 0 0;
 }
 
-.contactme-bottom-cont .contact-right {
-    /* border-style: solid solid solid none;
-    border-color: #fac100;  
-    padding: 20px; */
-}
-
 @media(max-width: 800px) {
     .contactme-bottom-cont .column {
         flex: 100%;
         max-width: 100%;
     }
+
+    .send-btn-contact{
+        text-align: center;
+    }
 }
+
 
 .contactme-bottom-cont .in-title {
     text-align: center;

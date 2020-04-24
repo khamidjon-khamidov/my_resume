@@ -9,7 +9,6 @@ function Posts(props) {
     const [posts, setPosts] = useState(myPosts);
 
     useEffect(() => {
-        console.log("update? = " + props.shouldUpdate);
         if (props.shouldUpdate > 0) {
             axios.get("http://localhost:9000/someone/posts")
                 .then(res => {
