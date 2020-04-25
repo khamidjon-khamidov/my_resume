@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Roll from "react-reveal/Roll";
-import Flip from "react-reveal/Flip";
 import Zoom from "react-reveal/Zoom";
 
 function SingleAchievement(props) {

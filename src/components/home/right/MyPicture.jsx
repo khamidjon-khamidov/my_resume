@@ -9,6 +9,7 @@ function MyPicture() {
             <img
                 style={{ width: "70%", height: "100%" }}
                 src="img/hamidjon_improved.png"
+                alt="my picture"
             />
         </div>
     )

@@ -37,7 +37,7 @@ function Skills(props) {
     };
 
     function onButtonClick(e) {
-        if (e.target.innerHTML == "Read More") {
+        if (e.target.innerHTML === "Read More") {
             setSkillStyle(prevValue => {
                 return {
                     ...prevValue,

@@ -6,7 +6,7 @@ import urls from "../../urls"
 function InputForm() {
 
     const [isDisabled, setIsDisabled] = useState(false);
-    const [msg, setMsg] = useState("");
+    const [mesg, setMesg] = useState("");
     const [sendInfo, setSendInfo] = useState("");
     const [someError, setSomeError] = useState("");
     const [message, setMessage] = useState({
@@ -18,7 +18,7 @@ function InputForm() {
 
     useEffect(() => {
         if (sendInfo === "Sending...") {
-            axios.get(urls.BASE_SERVER_URL + "/someone/sendMessage/" + msg)
+            axios.get(urls.BASE_SERVER_URL + "/someone/sendMessage/" + mesg)
                 .then(res => {
                     console.log(res.data)
                     if (res.status !== 404 && res.data.ok===true){
@@ -41,7 +41,7 @@ function InputForm() {
         } else if(sendInfo==="Sent successfully!"){
             setIsDisabled(false)
             document.getElementById("sendingInfo").style.color = "green"
-            setMsg("")
+            setMesg("")
             setMessage({
                 fName: "",
                 lName: "",
@@ -87,7 +87,7 @@ function InputForm() {
             return
         }
 
-        setMsg(escape("Name: " + message.fName + " \nSurname: " + message.lName + " \nEmail: " + message.email + "  \nText: " + message.text + " \nPlatform: " + window.navigator.platform));
+        setMesg(escape("Name: " + message.fName + " \nSurname: " + message.lName + " \nEmail: " + message.email + "  \nText: " + message.text + " \nPlatform: " + window.navigator.platform));
         setSendInfo("Sending...");
         setTimeout(function () {
             if (sendInfoRef.current === "Sending...") {
