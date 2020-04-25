@@ -5,6 +5,7 @@ import aboutMeDetails from "../about/aboutMeDetails";
 import InputForm from "./InputForm";
 import Bounce from 'react-reveal/Bounce';
 import axios from "axios";
+import urls from "../../urls"
 
 
 function ContactMe(props) {
@@ -13,7 +14,7 @@ function ContactMe(props) {
 
     useEffect(() => {
         if(props.shouldUpdate>0){
-            axios.get("http://localhost:9000/someone/aboutme")
+            axios.get(urls.BASE_SERVER_URL + "/someone/aboutme")
             .then(res => {
                 // console.log(res.data)
                 if (res.status !== 404)

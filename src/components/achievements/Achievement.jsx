@@ -8,7 +8,6 @@ function Achievement(props) {
         marginTop: "50px",
         display: "flex",
         flexWrap: "wrap",
-        // alignContent: "space-around",
         justifyContent: "space-around",
         marginBottom: "50px",
     }

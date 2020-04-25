@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Skill from "./Skill";
 import skills from "./skillsList"
-import axios from "axios"
+import axios from "axios";
+import urls from "../../urls";
 
 function Skills(props) {
 
@@ -9,7 +10,7 @@ function Skills(props) {
 
     useEffect(() => {
         if(props.shouldUpdate>0){
-            axios.get("http://localhost:9000/someone/skills")
+            axios.get(urls.BASE_SERVER_URL+"/someone/skills")
             .then(res => {
                 // console.log(res.data)
                 if (res.status !== 404)

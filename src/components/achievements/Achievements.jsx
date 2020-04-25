@@ -4,6 +4,7 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import honorsList from "./honorsList";
 import axios from "axios";
+import urls from "../../urls"
 
 function Achievements(props) {
 
@@ -11,7 +12,7 @@ function Achievements(props) {
 
     useEffect(() => {
         if (props.shouldUpdate > 0) {
-            axios.get("http://localhost:9000/someone/honors")
+            axios.get(urls.BASE_SERVER_URL + "/someone/honors")
                 .then(res => {
                     // console.log(res.data)
                     if (res.status !== 404)

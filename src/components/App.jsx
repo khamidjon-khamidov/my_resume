@@ -10,6 +10,7 @@ import Posts from "./posts/Posts";
 import ContactMe from "./contactme/ContactMe";
 import PersonalProjects from "./projects/PersonalProjects";
 import axios from "axios";
+import urls from "../urls";
 
 function App() {
 
@@ -18,10 +19,9 @@ function App() {
 
     useEffect(() => {
     
-        axios.get("http://localhost:9000/someone/shouldupdate/" + escape(window.navigator.platform))
+        axios.get(urls.BASE_SERVER_URL + "/someone/shouldupdate/" + escape(window.navigator.platform))
             .then(res => {
                 if (res.status !== 404)
-                    // console.log("is_update = " + res.data[0].is_update)
                     setIsUpdate(res.data[0].is_update);
                     setCvLink(res.data[0].cv_link);
             })

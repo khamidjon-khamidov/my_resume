@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import myPosts from "./myPosts";
 import PostItem from "./PostItem";
 import axios from "axios";
-
+import urls from "../../urls"
 
 function Posts(props) {
 
@@ -10,7 +10,7 @@ function Posts(props) {
 
     useEffect(() => {
         if (props.shouldUpdate > 0) {
-            axios.get("http://localhost:9000/someone/posts")
+            axios.get(urls.BASE_SERVER_URL + "/someone/posts")
                 .then(res => {
                     // console.log(res);
                     setPosts(res.data);

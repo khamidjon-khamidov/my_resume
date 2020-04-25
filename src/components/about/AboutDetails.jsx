@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import aboutMeDetails from "./aboutMeDetails";
 import AboutMyInterests from "./AboutMyInterests";
 import axios from "axios";
+import urls from "../../urls"
 
 function calculateExperience() {
     var startDate = new Date("2/Sep/2017 08:00:00");
@@ -29,7 +30,7 @@ function AboutDetails(props) {
 
     useEffect(function(){
         if(props.shouldUpdate > 0){
-            axios.get("http://localhost:9000/someone/aboutme")
+            axios.get(urls.BASE_SERVER_URL + "/someone/aboutme")
             .then(res => {
                 if (res.status !== 404)
                     // console.log("is_update = " + res.data[0].is_update)

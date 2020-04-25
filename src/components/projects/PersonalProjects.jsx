@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import SingleProject from "./SingleProject";
 import myProjects from "./myProjects";
 import axios from "axios"
+import urls from "../../urls"
 
 function PersonalProjects(props) {
 
@@ -9,7 +10,7 @@ function PersonalProjects(props) {
 
     useEffect(() => {
         if (props.shouldUpdate > 0) {
-            axios.get("http://localhost:9000/someone/projects")
+            axios.get(urls.BASE_SERVER_URL + "/someone/projects")
                 .then(res => {
                     // console.log(projects)
                     // console.log(res.data[0])

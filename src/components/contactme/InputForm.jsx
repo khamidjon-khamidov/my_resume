@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Button from '@material-ui/core/Button';
 import axios from "axios";
+import urls from "../../urls"
 
 function InputForm() {
 
@@ -17,7 +18,7 @@ function InputForm() {
 
     useEffect(() => {
         if (sendInfo === "Sending...") {
-            axios.get("http://localhost:9000/someone/sendMessage/" + msg)
+            axios.get(urls.BASE_SERVER_URL + "/someone/sendMessage/" + msg)
                 .then(res => {
                     console.log(res.data)
                     if (res.status !== 404 && res.data.ok===true){
