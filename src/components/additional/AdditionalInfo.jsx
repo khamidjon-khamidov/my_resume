@@ -25,7 +25,8 @@ function AdditionalInfo() {
 
 
                         <div className="addtional-item-info">
-                            <p className="additional-item1"><strong>Android Development</strong></p>
+                            <p className="additional-item1"><strong>Android</strong></p>
+                            <p className="additional-item1"><strong>Development</strong></p>
                             <br />
                             <p className="additional-item2">Projects</p>
                         </div>

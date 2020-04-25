@@ -278,13 +278,25 @@ header {
 }
 
 @media(max-width: 600px){
-    
+    .additional-img-container{
+        text-align: center;
+        flex: 100%;
+        max-width: 100%;
+    }   
+
+    .addtional-item-info{
+        margin-top: 5px;
+        text-align: center;
+        flex: 100%;
+        max-width: 100%;
+    }
 }
 
 .addtional-item-info .additional-item1 {
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
     font-size: 1.1rem;
+    line-height: 0.1;
     display: inline-block;
 }
 
