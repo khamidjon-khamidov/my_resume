@@ -43,7 +43,7 @@ function SingleProject(props) {
             <h1>
                 {projectTitle}{" "}
                 <span onClick={() => openLink(projectGitLink)} style={iconStyle}><i className="home-social-icon fab fa-github"></i></span>
-                {" "}<span onClick={() => openLink(projectLink)}><i class="home-social-icon fas fa-link"></i></span>
+                {" "}<span onClick={() => openLink(projectLink)}><i className="home-social-icon fas fa-link"></i></span>
             </h1>
             <p style={desStyle}>{projectDes}</p>
 

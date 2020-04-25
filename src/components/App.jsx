@@ -17,8 +17,7 @@ function App() {
     const [cvLink, setCvLink] = useState("https://console.firebase.google.com/project/who-is-khamidjon/storage/who-is-khamidjon.appspot.com/files~2Fcv");
 
     useEffect(() => {
-
-        console.log("inside App.jsx useEffect");    
+    
         axios.get("http://localhost:9000/someone/shouldupdate/" + escape(window.navigator.platform))
             .then(res => {
                 if (res.status !== 404)

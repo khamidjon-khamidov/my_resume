@@ -19,7 +19,7 @@ function AdditionalInfo() {
 
                         <div className="additional-img-container">
                             <span className="additional-img">
-                                <i class="fab fa-android" />
+                                <i className="fab fa-android" />
                             </span>
                         </div>
 
@@ -37,7 +37,7 @@ function AdditionalInfo() {
                     <div style={algoStyle} className="additional-item-container">
                         <div className="additional-img-container">
                             <span className="additional-img">
-                                <i class="fas fa-code" />
+                                <i className="fas fa-code" />
                             </span>
                         </div>
 
@@ -57,7 +57,7 @@ function AdditionalInfo() {
                     <div className="additional-item-container">
                         <div className="additional-img-container">
                             <span className="additional-img">
-                                <i class="fab fa-internet-explorer"></i>
+                                <i className="fab fa-internet-explorer"></i>
                             </span>
                         </div>
 
