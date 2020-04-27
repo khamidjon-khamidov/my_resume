@@ -14,7 +14,7 @@ const aboutMeDetails = {
             link: "https://www.lsbu.ac.uk/"
         }
     ],
-    pictureLink: "./img/ha1.png"
+    pictureLink: "./img/finger_point.png"
 }
 
 export default aboutMeDetails;

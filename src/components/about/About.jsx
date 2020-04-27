@@ -9,6 +9,7 @@ function About(props) {
            <AboutMyImg />
            <AboutDetails
             shouldUpdate={props.shouldUpdate} /> 
+
         </div>
 
     );
