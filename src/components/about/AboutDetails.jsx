@@ -67,7 +67,7 @@ function AboutDetails(props) {
         <div className="about-details-base-cont">
             <div className="about-details-container">
                 <p className="my-intro">My Intro</p>
-                <p className="about-me"><strong>About Me</strong></p>
+                <p className="about-me">About Me</p>
 
                 <p className="about-description">{description}</p>
 

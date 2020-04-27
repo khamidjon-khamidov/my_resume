@@ -312,12 +312,12 @@ header {
     flex-wrap: wrap;
     margin: 0 auto 50px auto;
 }
-
 /* ----------- about my image part(middle) -------- */
 
 .about-my-img-container {
     position: relative;
     display: flex;
+    opacity: 0.2;
     flex: 30%;
     opacity: 0.1;
     max-width: 30%;
@@ -371,7 +371,7 @@ header {
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
     font-size: 3rem;
-    line-height: 0.5;
+    line-height: 0.7;
     padding: 2%;
     border-color: #fac100;
 }
