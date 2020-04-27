@@ -532,9 +532,32 @@ header {
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
     font-size: 3rem;
-    line-height: 0.5;
-    padding: 2%;
+    line-height: 0.9;
+    padding: 1%;
     border-color: #fac100;
+}
+
+.single-achievement-cont-style {
+    text-align: center;
+    position: relative;
+    flex: 45%;
+    padding-bottom: 0;
+    max-width: 45%;
+    margin: 10px 0px 0px 0px;
+    border-style: groove;
+    border-color: #fac100;
+    transition: background 0.4s ease-in-out;
+    -webkit-box-shadow: 0px 0px 21px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 21px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 21px -5px rgba(0, 0, 0, 0.75);
+    transition: background 0.4s ease-in-out;
+}
+
+@media(max-width:600px) {
+    .single-achievement-cont-style {
+        flex: 100%;
+        max-width: 100%;
+    }
 }
 
 .myClass {
