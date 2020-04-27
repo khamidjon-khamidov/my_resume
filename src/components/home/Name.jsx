@@ -5,7 +5,7 @@ function Name() {
     return (
         <div className="home-name">
             <p className="home-name-greet">Hi, I am</p>
-            <h3 className="home-name-fullname">Khamidjon Khamidov</h3>
+            <h3 className="home-name-fullname">Khamidjon</h3>
         </div>
     )
 }
