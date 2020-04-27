@@ -27,15 +27,15 @@ function AboutDetails(props) {
     const [aboutMe, setAboutMe] = useState(aboutMeDetails);
     const [experiencePeriod, setExperiencePeriod] = useState(calculateExperience);
 
-    useEffect(function(){
-        if(props.shouldUpdate > 0){
+    useEffect(function () {
+        if (props.shouldUpdate > 0) {
             axios.get("http://localhost:9000/someone/aboutme")
-            .then(res => {
-                if (res.status !== 404)
-                    // console.log("is_update = " + res.data[0].is_update)
-                    setAboutMe(res.data[0]);
-            })
-            .catch(err => {})
+                .then(res => {
+                    if (res.status !== 404)
+                        // console.log("is_update = " + res.data[0].is_update)
+                        setAboutMe(res.data[0]);
+                })
+                .catch(err => { })
         }
     }, [props.shouldUpdate])
 
@@ -65,8 +65,10 @@ function AboutDetails(props) {
     return (
         <div className="about-details-base-cont">
             <div className="about-details-container">
-                <p className="my-intro">My Intro</p>
-                <p className="about-me">About Me</p>
+                <div className="about-title-container">
+                    <p className="my-intro">My Intro</p>
+                    <p className="about-me">About Me</p>
+                </div>
 
                 <p className="about-description">{description}</p>
 
@@ -91,8 +93,10 @@ function AboutDetails(props) {
                 </div>
 
                 {/* my interests */}
-                <p className="my-interests"><strong>My Interests</strong></p>
-                <AboutMyInterests />
+                <div className="about-interests-base-cont">
+                    <p className="my-interests"><strong>My Interests</strong></p>
+                    <AboutMyInterests />
+                </div>
             </div>
         </div>
     )

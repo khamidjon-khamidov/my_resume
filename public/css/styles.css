@@ -341,6 +341,14 @@ header {
         flex: 100%;
         max-width: 100%;
     }
+
+    .about-title-container{
+        text-align: center;
+    }
+
+    .about-interests-base-cont{
+        text-align: center;
+    }
 }
 
 .about-details-container {
