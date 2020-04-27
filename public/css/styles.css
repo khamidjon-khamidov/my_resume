@@ -162,6 +162,8 @@ header {
 .home-buttons-mobile-version{
     display: none;
 }
+/* //this is change */
+
 @media(max-width: 600px) {
     .home-left-buttons {
         display: none;
@@ -472,6 +474,28 @@ header {
     flex-wrap: wrap;
     align-content: stretch;
     vertical-align: top;
+}
+
+.single-skill-cont {
+    flex: 50%;
+    max-width: 50%;
+    padding: 2%;
+}
+
+@media(max-width:800px) {
+    .single-skill-cont {
+        flex: 49%;
+        max-width: 49%;
+        padding: 0 4px;
+    }
+}
+
+@media(max-width: 600px) {
+    .single-skill-cont {
+        flex: 100%;
+        max-width: 100%;
+        padding: 0 4px;
+    }
 }
 
 .skills-container>div>p {

@@ -21,20 +21,12 @@ function Skills(props) {
     }, [props.shouldUpdate])
 
     const [skillStyle, setSkillStyle] = useState({
-        display: "none",
-        alignSelf: "stretch",
-        flex: "1 0 500px",
-        padding: "2%",
+        display: "none"
     });
 
     const [backgr, setBackgr] = useState("linear-gradient(0deg, rgba(199,161,219,1) 0%, rgba(228,201,242,1) 15%, rgba(244,244,244,1) 100%)")
 
-    const skillStyle2 = {
-        // display: "none",
-        alignSelf: "stretch",
-        flex: "1 0 500px",
-        padding: "2%",
-    };
+    const skillStyle2 = {};
 
     function onButtonClick(e) {
         if (e.target.innerHTML === "Read More") {
