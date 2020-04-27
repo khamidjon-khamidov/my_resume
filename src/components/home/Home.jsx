@@ -31,6 +31,13 @@ function Home(props) {
 
             </div>
 
+            <div className="home-buttons-mobile-version">
+                    <DownloadBtn 
+                        cv_link={props.cv_link}
+                    />
+                    <GooglePlayBtn />
+                </div>
+
             <div className="home-right">
                 <MyPicture />
             </div>

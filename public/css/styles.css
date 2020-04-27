@@ -61,6 +61,13 @@ header {
     background: #f4f4f4;
 }
 
+
+@media(max-width:600px){
+    .home{
+        text-align: center;
+    }
+}
+
 /* ------------- home social part -------- */
 
 .home-social {
@@ -126,7 +133,7 @@ header {
 
 .home-name {
     margin-top: 30px;
-    line-height: 0.1;
+    line-height: 1;
 }
 
 .home-name-greet {
@@ -157,9 +164,18 @@ header {
     text-align: center;
 }
 
+.home-buttons-mobile-version{
+    display: none;
+}
 @media(max-width: 600px) {
     .home-left-buttons {
-        margin-top: 10px;
+        display: none;
+    }
+
+    .home-buttons-mobile-version{
+        display: block;
+        margin: auto;
+        text-align: center;
     }
 }
 
