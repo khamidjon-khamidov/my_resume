@@ -520,9 +520,7 @@ header {
 
 .achievements-container {
     width: 80%;
-    margin: 200px auto 300px auto;
-    /* border-style: solid; */
-    /* border-color: 10px grey; */
+    margin: 100px auto 300px auto;
 }
 
 .achievements-container .achieve-title p {
@@ -532,8 +530,8 @@ header {
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
     font-size: 3rem;
-    line-height: 0.9;
-    padding: 1%;
+    line-height: 1;
+    padding: 1% 2%;
     border-color: #fac100;
 }
 
@@ -546,17 +544,16 @@ header {
     margin: 10px 0px 0px 0px;
     border-style: groove;
     border-color: #fac100;
-    transition: background 0.4s ease-in-out;
     -webkit-box-shadow: 0px 0px 21px -5px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 21px -5px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 21px -5px rgba(0, 0, 0, 0.75);
-    transition: background 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
 @media(max-width:600px) {
     .single-achievement-cont-style {
-        flex: 100%;
-        max-width: 100%;
+        flex: 95%;
+        max-width: 95%;
     }
 }
 
@@ -608,14 +605,14 @@ header {
     -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.35);
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
-    transition: background 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
 @media(max-width: 800px) {
     .single-pr-media-item {
-        flex: 100%;
-        max-width: 100%;
+        flex: 97%;
+        max-width: 97%;
     }
 }
 
