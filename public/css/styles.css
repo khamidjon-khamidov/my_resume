@@ -619,7 +619,8 @@ header {
 /* ----------------------------- Posts Container ---------------------------- */
 
 .posts-base-container {
-    margin-bottom: 200px;
+    margin-bottom: 100px;
+    margin-top: 100px;
     text-align: center;
 }
 
