@@ -27,10 +27,6 @@ header {
     border-color: #fac100;
 }
 
-/* .navbar {
-    padding: 10px 10% 5px 10%;
-} */
-
 .navbar-light .logo {
     height: 25px;
     width: 100px;
@@ -394,8 +390,8 @@ header {
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
     font-size: 3rem;
-    line-height: 0.7;
-    padding: 2%;
+    line-height: 1;
+    padding: 0.5% 2%;
     border-color: #fac100;
 }
 
@@ -485,8 +481,8 @@ header {
     color: #a600ff;
     font-family: 'Hi Melody', cursive;
     font-size: 3rem;
-    line-height: 0.5;
-    padding: 2%;
+    line-height: 1;
+    padding: 0.5% 1%;
     border-color: #fac100;
 }
 
