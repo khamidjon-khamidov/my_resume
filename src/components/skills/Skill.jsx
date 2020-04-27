@@ -12,9 +12,13 @@ function Skill(props) {
         fontFamily: "san-serif"
     };
 
+    const progressCont = {
+        width: "100%",
+        height: "100%"
+    }
+
     const progressStyle = {
-        width: percentage + "%",
-        // animation: "progressMove 2s"
+        width: percentage + "%"
     };
 
     const columnStyle = {
@@ -50,12 +54,13 @@ function Skill(props) {
         <Roll bottom cascade>
             <div
                 style={props.contStyle}
+                className="single-skill-cont"
             >
                 <h1 style={nameStyle}>{name}</h1>
 
                 {/* progressbar */}
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={progressStyle}></div>
+                <div style={{progressCont}} className="progress">
+                    <div className="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={progressStyle}></div>
                 </div>
 
                 {/* column 1 */}
