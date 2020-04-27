@@ -519,8 +519,8 @@ header {
 /* ------------------------------ Achievements part -------------------------- */
 
 .achievements-container {
-    width: 80%;
-    margin: 100px auto 100px auto;
+    width: 95%;
+    margin: 200px auto 300px auto;
 }
 
 .achievements-container .achieve-title p {
@@ -549,7 +549,6 @@ header {
     box-shadow: 0px 0px 21px -5px rgba(0, 0, 0, 0.75);
     transition: all 0.4s ease-in-out;
 }
-
 @media(max-width:600px) {
     .single-achievement-cont-style {
         flex: 95%;
@@ -626,7 +625,7 @@ header {
 
 .posts-container {
     margin: auto;
-    width: 95%;
+    width: 100%;
     box-sizing: border-box;
     padding: 2%;
     background: white;
