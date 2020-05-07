@@ -61,6 +61,18 @@ const honorsList = [
                 itemTitle: "Full Stack Web Development",
                 itemDescription:"udemy.com",
                 itemLink:"./img/android/web_certificate_udemy_modified.jpg"
+            },
+	    {
+                itemId: "8011",
+                itemTitle: "Complete Kotlin Coroutines Development Course",
+                itemDescription:"udemy.com",
+                itemLink:"./img/android/coroutines_development.jpg"
+            },
+	    {
+                itemId: "8012",
+                itemTitle: "Android Unit Testing And Test Driven Development",
+                itemDescription:"udemy.com",
+                itemLink:"./img/android/unit_testing_and_tdd.jpg"
             }
             
         ]
@@ -70,19 +82,19 @@ const honorsList = [
         listTitle: "Algorithms",
         hList: [
             {
-                itemId: "3011",
+                itemId: "4011",
                 itemTitle: "Problems Solved in online website",
                 itemDescription:"acm.timus.ru",
                 itemLink:"./img/algorithms/acm_timus_modified.png"
             },
             {
-                itemId: "3012",
+                itemId: "4012",
                 itemTitle: "Olimpiad Certificate in Republic",
                 itemDescription:"TUIT Open Challenge",
                 itemLink:"./img/algorithms/algo_certificate_modified.JPG"
             },
             {
-                itemId: "3013",
+                itemId: "4013",
                 itemTitle: "C/C++ Fundamentals Course",
                 itemDescription:"JNUCIT",
                 itemLink:"./img/algorithms/c++_certificate_modifed.JPG"
@@ -94,13 +106,13 @@ const honorsList = [
         listTitle: "Others",
         hList: [
             {
-                itemId: "3014",
+                itemId: "5014",
                 itemTitle: "Chess Regional Competition",
                 itemDescription:"College Years",
                 itemLink:"./img/others/chess_certificate_modified.JPG"
             },
             {
-                itemId: "3015",
+                itemId: "5015",
                 itemTitle: "English International Certificate",
                 itemDescription:"IELTS",
                 itemLink:"./img/others/ielts_certificate_modified.jpg"
