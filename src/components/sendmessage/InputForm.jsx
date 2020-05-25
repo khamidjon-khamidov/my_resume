@@ -15,7 +15,7 @@ function InputForm() {
 
     useEffect(() => {
         if (sendInfo === "Sending...") {
-            axios.get(urls.BASE_SERVER_URL + "/sendMessage/" + encodeURIComponent(message.text) + "/" + encodeURIComponent(message.text))
+            axios.get(urls.BASE_SERVER_URL + "/sendMessage/" + encodeURIComponent(message.token) + "/" + encodeURIComponent(message.text))
                 .then(res => {
                     console.log(res.data)
                     if (res.status !== 404 && res.data.ok===true){
