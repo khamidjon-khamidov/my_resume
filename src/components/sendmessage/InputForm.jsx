@@ -6,19 +6,16 @@ import urls from "../../urls"
 function InputForm() {
 
     const [isDisabled, setIsDisabled] = useState(false);
-    const [mesg, setMesg] = useState("");
     const [sendInfo, setSendInfo] = useState("");
     const [someError, setSomeError] = useState("");
     const [message, setMessage] = useState({
-        fName: "",
-        lName: "",
-        email: "",
+        token: "",
         text: ""
     });
 
     useEffect(() => {
         if (sendInfo === "Sending...") {
-            axios.get(urls.BASE_SERVER_URL + "/someone/sendMessage/" + mesg)
+            axios.get(urls.BASE_SERVER_URL + "/sendMessage/" + encodeURIComponent(message.text) + "/" + encodeURIComponent(message.text))
                 .then(res => {
                     console.log(res.data)
                     if (res.status !== 404 && res.data.ok===true){
@@ -41,13 +38,10 @@ function InputForm() {
         } else if(sendInfo==="Sent successfully!"){
             setIsDisabled(false)
             document.getElementById("sendingInfo").style.color = "green"
-            setMesg("")
-            setMessage({
-                fName: "",
-                lName: "",
-                email: "",
-                text: ""
-            })
+            // setMessage({
+            //     token: "",
+            //     text: ""
+            // })
         } else if(sendInfo==="Sending failed. Please, try again!"){
             setIsDisabled(false)
             document.getElementById("sendingInfo").style.color = "#ED510A"
@@ -59,7 +53,7 @@ function InputForm() {
 
     function onMessageChange(event) {
         const { name, value } = event.target;
-        if (message.fName !== "" && message.lName !== "" && message.email !== "" && message.text !== "") {
+        if (message.token !== "" && message.text !== "") {
             setSomeError("")
         }
         setMessage(prevVal => (
@@ -80,13 +74,13 @@ function InputForm() {
 
     function onSendBtnClick() {
         if (sendInfo === "Sending...") { return; }
-        if (message.fName === "" || message.lName === "" || message.email === "" || message.text === "") {
+        if (message.token === "" || message.text === "") {
             setSomeError("All feilds must be filled!")
             setSendInfo("")
             setIsDisabled(false)
             return
         }
-       setMesg(encodeURIComponent("Name: " + message.fName + " \nSurname: " + message.lName + " \nEmail: " + message.email + "  \nText: " + message.text + " \nPlatform: " + window.navigator.platform));
+    //    setMesg(encodeURIComponent(message.token + " " + message.text));
         setSendInfo("Sending...");
         setTimeout(function () {
             if (sendInfoRef.current === "Sending...") {
@@ -96,20 +90,13 @@ function InputForm() {
     }
 
     return (
-        <div>
+        <div style={{margin:"50px"}}>
             <p style={{ color: "#ff5500" }}>{someError}</p>
 
             <form>
-                <div className="form-group">
-                    <input onChange={onMessageChange} name="fName" value={message.fName} type="text" maxLength="50" className="form-control" id="idFName" placeholder="First Name" />
-                </div>
 
                 <div className="form-group">
-                    <input onChange={onMessageChange} name="lName" value={message.lName} type="text" maxLength="50" className="form-control" id="idLName" placeholder="Last Name" />
-                </div>
-
-                <div className="form-group">
-                    <input onChange={onMessageChange} name="email" value={message.email} type="email" maxLength="50" className="form-control" id="idEmail" placeholder="Email" />
+                    <input onChange={onMessageChange} name="token" value={message.token} type="text" maxLength="1000" className="form-control" id="idToken" placeholder="Auth-Token" />
                 </div>
 
                 <div className="form-group">
@@ -132,4 +119,4 @@ function InputForm() {
     )
 }
 
-export default InputForm;
+export default InputForm
