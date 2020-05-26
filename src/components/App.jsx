@@ -15,7 +15,7 @@ import urls from "../urls";
 function App() {
 
     const [isUpdate, setIsUpdate] = useState(0);
-    const [cvLink, setCvLink] = useState("https://console.firebase.google.com/project/who-is-khamidjon/storage/who-is-khamidjon.appspot.com/files~2Fcv");
+    const [cvLink, setCvLink] = useState("https://github.com/SomeoneAndNoone/cv_for_khamidjon_mobile");
 
     useEffect(() => {
     
